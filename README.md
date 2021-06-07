@@ -26,3 +26,9 @@ Referentes:
 - https://www.cervezapatagonia.com.ar/microcerveceria: menues interactivos
 
 PD: Esto recién comienza.
+
+Link Trello (sprints + retro):
+https://trello.com/proyectointegrador230/home
+
+
+
