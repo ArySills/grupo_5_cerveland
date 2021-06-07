@@ -1,0 +1,23 @@
+{
+  "name": "grupo_5_cerveland",
+  "version": "1.0.0",
+  "description": "Temática elegida:\r Sitio web que centraliza la venta de todos los insumos y equipamientos necesarios para la fabricación de cerveza artesanal, incluyendo cerveza sin TACC. Adicionalmente este sitio ofrece la posibilidad de optar por inscribirse a realizar diferentes cursos vinculados a la preparación y/o degustación de cerveza artesanal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArySills/grupo_5_cerveland.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArySills/grupo_5_cerveland/issues"
+  },
+  "homepage": "https://github.com/ArySills/grupo_5_cerveland#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
