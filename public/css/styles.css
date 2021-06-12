@@ -253,9 +253,14 @@ td input{
     padding: 5px;
 }
 
-td a{
-    color:#FCB941;
-    font-size: 12px;
+#eliminar{
+    color:rgb(253, 8, 8);
+    font-size: 15px;
+}
+
+#finalizar{
+    color: black;
+    font-size: 20px;
 }
 
 .total-price{
@@ -276,7 +281,8 @@ td a{
     display: block;
     width: 100%;
     text-align: left;
-    font-size: 18px;
+    font-size: 25px;
+
 }
 
 
