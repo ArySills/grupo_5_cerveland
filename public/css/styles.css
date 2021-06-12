@@ -202,13 +202,12 @@
 body {
 
     font-family: 'Roboto', sans-serif;
-    background-color:white;
+    background-color: #f8cd7d;
 }
 
 
 .main-content{
     margin: auto;
-
 }
 
 
@@ -269,4 +268,15 @@ td a{
     width: 100%;
     max-width: 500px;
 }
+
+
+.botones-compra{
+    border-top: 3px solid #FFA605;
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+
 
