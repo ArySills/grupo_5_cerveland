@@ -1,70 +1,442 @@
-/*
-font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;
-*/
-
-* {
+*{
     box-sizing: border-box;
 }
 
-body {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILOS DEL LOGIN */
+
+
+.bodyLogin {
+    background-color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
 }
-
-
-.login-container {
-    width: 70%;
-    position: fixed;
-    top: 35%;
-    left: 35%;
-    background-color: teal;
-    
+.h2Login {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    background-color: #F9BE51;
+    border-radius: 10px;
+    width: 100%;
+    height: 600px;
 }
 
-
-/*
-.login {
-    height: fit-content;
-    border: solid white 0.5px;
-    background-color: #FCB941;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    padding-top: 10px;
+.form-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-inputs {
     margin-bottom: 20px;
     border: none;
-    border-bottom: #FFA605 1px solid;
-    width: 90%;
+    border-bottom: #ffffff 2px solid;
+    border-radius: 2px;
+    background-color: #F9BE51;
+    width: 70%;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     padding: 5px;
-    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-inputs:active {
     border: none;
 }
 
+.form-inputs:focus {
+    border: none;
+}
+
+.form-content {
+    height: auto;
+}
+
+.form-content i {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.remember-me {
+    font-size: 12px;
+    text-align: left;
+    margin-left: 43px;
+    margin-bottom: 5px;
+}
+
 .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+}
+
+.buttons i{
+    margin-right: 4px;
+}
+
+.login-button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 25px;
+    border: 0.5px white;
+    padding: 6px 20px;
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42%;
+}
+
+.buttons-social-media {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin: 40px;
+    margin-top: 60px;
+    margin-bottom: 0;
 }
 
-.login-button {
-    width: 40%;
+.login-button-social-media {
+    width: 70%;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     background-color: white;
-    border-radius: 8px;
-    border: grey solid 1px;
+    border-radius: 10px;
+    border: 0.5px white;
     padding: 6px 20px;
-    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
 }
 
-*/
+.forgot-pass{
+text-align: left;
+margin-left: 50px;
+}
+
+.forgot-pass a {
+    margin-top: 15px;
+    color: white;
+    font-size: 12px;
+}
+
+
+/*ESTILOS DEL CARRITO DE COMPRAS*/
+
+
+.bodyTom {
+
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8cd7d;
+}
+
+
+.main-content{
+    margin: auto;
+}
+
+
+
+
+.foto-producto {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cart-items{
+    margin: 80px auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    background-color:#FCB941;
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+#eliminar{
+    color:rgb(253, 8, 8);
+    font-size: 15px;
+}
+
+#finalizar{
+    color: black;
+    font-size: 20px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #FFA605;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.botones-compra{
+    border-top: 3px solid #FFA605;
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+
+}
+
+
+
+/*ESTILOS DEL PRODUCT DETAIL*/
+
+.product-detail{
+    margin: 5.5vw;
+    background-color: #f8cd7d;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+.foto-ampliada{
+    display: block;
+    width: 285px;
+    height: 285px;
+    margin: auto;
+   
+
+}
+
+.cantidad{
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.listita{
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+
+
+.caja-cantidad {
+    
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #FFFFFF;
+    background-color: #84998a;
+    border-color: #84998a;
+    text-decoration: none;
+}
+
+.form-control{
+    max-width: 50px;
+    text-align: center;
+}
+.divisoria{
+    width:100%;
+    height:5px;
+    background-color: black;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.cuadrado{
+    width: 200px;
+    height: 235px;
+    border: 1px solid #555;
+    margin: auto;
+    background-color: #09800a3b;
+    margin-top: 30px;
+}
+
+
+
+.prod-relacionado{
+    display: block;
+    margin: 5px solid red;
+    text-align: center;
+    
+}
+.foto-prod-relacionado{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 24px;
+}
+
+.prod-relacionado2{
+    font-size: 12px;
+    margin-bottom: 3px;   
+}
+
+.prod-relacionado-precio{
+    font-size: 12px;
+    margin-top: 0px;
+}
