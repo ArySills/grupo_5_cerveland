@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />     
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+        
+</head>
+<body>
+    <div class="formulario">
+        <form  action="/register" method="POST" class="form-container">
+            <h2>Bienvenido !</h2>
+            
+            <div>
+                <div class="form-content">
+                    <i class="fas fa-user"></i>
+                    <input class="form-inputs" type="text" name="userName" placeholder="User name" required>
+                </div>
+        
+                <div class="form-content">
+                    <i class="fas fa-envelope"></i>
+                    <input class="form-inputs" type="email" name="userEmail" placeholder="E-mail" required>
+                </div>
+        
+                <div class="form-content">
+                    <i class="fas fa-lock"></i>
+                    <input class="form-inputs" type="password" name="userPassword" placeholder="Password" required>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" name="rememberm-me" value="rememberMe" id="remember-me">
+                    <label for="remember-me"> Recordar cuenta</label>
+                </div>
+
+                <div class="forgot-pass"><a href="#">Olvidó su contraseña?</a></div>
+
+                <div class="buttons">
+                    <button  class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Log In</button>
+                    <button  class="login-button" type="submit"><i class="fas fa-plus"></i>Sign up</button>
+                </div>
+
+                <div class="buttons-social-media">
+                    <button  class="login-button-social-media" type="submit">Log in with Google</button>
+                    <button  class="login-button-social-media" type="submit">Log in with Facebook</button>
+                </div>
+    
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
