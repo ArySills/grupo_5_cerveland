@@ -162,9 +162,148 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bodyTom {
+
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8cd7d;
+}
+
+
+.main-content{
+    margin: auto;
+}
+
+
+
+
+.foto-producto {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cart-items{
+    margin: 80px auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    background-color:#FCB941;
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+#eliminar{
+    color:rgb(253, 8, 8);
+    font-size: 15px;
+}
+
+#finalizar{
+    color: black;
+    font-size: 20px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #FFA605;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.botones-compra{
+    border-top: 3px solid #FFA605;
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .product-detail{
     margin: 5.5vw;
     background-color: #f8cd7d;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -275,110 +414,3 @@
     font-size: 12px;
     margin-top: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-body {
-
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8cd7d;
-}
-
-
-.main-content{
-    margin: auto;
-}
-
-
-
-
-.foto-producto {
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-}
-
-.cart-items{
-    margin: 80px auto;
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-
-
-
-.cart-info{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-th{
-    text-align: left;
-    padding: 5px;
-    background-color:#FCB941;
-    font-weight: normal;
-}
-
-td{
-    padding: 10px 5px;
-}
-
-td input{
-    width: 40px;
-    height: 30px;
-    padding: 5px;
-}
-
-#eliminar{
-    color:rgb(253, 8, 8);
-    font-size: 15px;
-}
-
-#finalizar{
-    color: black;
-    font-size: 20px;
-}
-
-.total-price{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.total-price table{
-    border-top: 3px solid #FFA605;
-    width: 100%;
-    max-width: 500px;
-}
-
-
-.botones-compra{
-    border-top: 3px solid #FFA605;
-    margin: auto;
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-size: 25px;
-
-}
-
-
