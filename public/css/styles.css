@@ -1,103 +1,131 @@
 *{
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ESTILOS DE SLIDER */
+*{
+    box-sizing: border-box;
+}
+.container-slider{
+    margin: 40px 0;
+    position: relative;
+}
+.slider {
+    top: 10px;    
+    margin: auto;
+    overflow: hidden;
+    border: 0.5px solid #FCB941;
+    width: 100%;
+    height: auto;
+    padding: 5px 5px;        
+  }
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 300%;
+    animation: cambio 30s infinite normal ease-in;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 100%;
+    height: 180px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    30% {margin-left: 0;}
+    35% {margin-left: -100%;}
+    65% {margin-left: -100%;}
+    70% {margin-left: -200%;}
+    100% {margin-left: -200%;}
+}
+.slider__section{
+    position: relative;
+}
+.slider__content{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    color: white;
+    transform: translateX(-50%) translateY(-50%);   
+}
+.slider__txt{
+    text-align: center;
+    font-size: 2.2em;
+}
+
+/* ESTILOS DE PRODUCTOS */
+.container-products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+.product {
+    border: 1px solid #FCB941;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+.product:before{
+    content: "Nuevo";
+    background: #359223;
+    padding: 10px;
+    position: absolute;
+    width: 60px;
+    right: 10px;
+    transform: rotate(-90deg);
+    color: white;
+}
+.product__img{
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+.product__title{
+text-align: center;
+}
+.product__price{
+text-align: center;
+color: #FFA605;
+font-weight: bold;
+}
+.product__icon{
+    margin: 20px 0;
+}
+.main-title{
+    text-align: center;
+}
+/* ESTILOS DE EXTRAS */
+.container-extras{
+    display: flex;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    }
+.extras__title{
+    text-align: center;
+    justify-content: center;
+}
+.details{
+    border: none;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #FCB941;
+    justify-content: center;
+}
+.extras__icon{
+    margin: 20px 0;
+    justify-content: center;
+}
 
 /* ESTILOS DEL LOGIN */
 
