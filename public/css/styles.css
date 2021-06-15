@@ -6,14 +6,15 @@
     box-sizing: border-box;
 }
 .container-slider{
-    margin: 40px 0;
+    margin-top: 40px;
     position: relative;
-}
+    width: 300px;
+    height: auto;
+    background-size: cover;
+    }
 .slider {
-    top: 10px;    
-    margin: auto;
+    margin-top: 10px;    
     overflow: hidden;
-    border: 0.5px solid #FCB941;
     width: 100%;
     height: auto;
     padding: 5px 5px;        
@@ -30,9 +31,10 @@
 }
 .slider img{
     width: 100%;
-    height: 180px;
+    height: 600px;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: cover; 
+    margin: 0px;
 }
 
 @keyframes cambio {
@@ -62,13 +64,14 @@
 .container-products{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 10px;
-    width: 100%;
-    height: 100%;
-}
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+   }
 .product {
     border: 1px solid #FCB941;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     position: relative;
 }
@@ -85,7 +88,7 @@
 .product__img{
     width: 100%;
     max-width: 100%;
-    height: 100px;
+    height: auto;
     object-fit: cover;
 }
 .product__title{
@@ -104,12 +107,10 @@ font-weight: bold;
 }
 /* ESTILOS DE EXTRAS */
 .container-extras{
-    display: flex;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 10px;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 20px;
     }
 .extras__title{
     text-align: center;
@@ -119,8 +120,8 @@ font-weight: bold;
     border: none;
     padding: 20px;
     text-align: center;
-    border: 1px solid #FCB941;
     justify-content: center;
+    background-color: rgb(252,185,65,0.5);
 }
 .extras__icon{
     margin: 20px 0;
