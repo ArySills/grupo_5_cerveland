@@ -1,10 +1,66 @@
 *{
     box-sizing: border-box;
 }
-/* ESTILOS DE SLIDER */
-*{
-    box-sizing: border-box;
+
+body{
+   font-family: 'Roboto', sans-serif;
 }
+
+
+header{
+    font-size: 14px;
+    background-color: #F9BE51;
+    padding: 2%;
+}
+
+.logo {
+    width: 100px;
+}
+
+.main-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav-bar{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.main-nav-bar  ul {
+    list-style-type: none;
+    color: white;
+    display: flex;
+}
+
+.main-nav-bar li {
+    padding: 2px;
+}
+
+.main-nav-bar a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+.icons-nav-bar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-nav-bar{
+    padding: 4px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* ESTILOS DE SLIDER */
+
 .container-slider{
     margin-top: 40px;
     position: relative;
@@ -134,11 +190,11 @@ font-weight: bold;
 
 .bodyLogin {
     background-color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
 .h2Login {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
 }
 .formulario {
@@ -147,7 +203,7 @@ font-weight: bold;
     align-items: center;
     margin-top: 20px;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     text-align: center;
     background-color: #F9BE51;
@@ -157,7 +213,7 @@ font-weight: bold;
 }
 
 .form-container {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     justify-content: center;
     align-items: center;
@@ -170,7 +226,7 @@ font-weight: bold;
     border-radius: 2px;
     background-color: #F9BE51;
     width: 70%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     padding: 5px;
     justify-content: center;
@@ -213,7 +269,7 @@ font-weight: bold;
 }
 
 .login-button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     background-color: white;
     border-radius: 25px;
@@ -239,7 +295,7 @@ font-weight: bold;
 
 .login-button-social-media {
     width: 70%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     background-color: white;
     border-radius: 10px;
