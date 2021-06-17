@@ -343,7 +343,9 @@ margin-left: 50px;
 }
 
 .cart-items{
-    margin: 80px auto;
+    margin: 30px auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 table{
@@ -405,7 +407,8 @@ td input{
     width: 100%;
     text-align: left;
     font-size: 25px;
-
+    padding-top: 5px;
+    padding-bottom: 29px;
 }
 
 
@@ -413,12 +416,17 @@ td input{
 /*ESTILOS DEL PRODUCT DETAIL*/
 
 .product-detail{
-    margin: 5.5vw;
-    background-color: #f8cd7d;
+    background-color: #f9be51ab;
     font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
+.detail-title{
+    margin-top: 0px;
+    padding-top: 18px;
 
+}
 
 
 
@@ -489,8 +497,6 @@ td input{
     width: 100%;
     height: 5px;
     background-color: #267127;
-    margin-top: 40px;
-    margin-bottom: 40px;
     border: none;
 }
 .cuadrado{
@@ -533,7 +539,8 @@ td input{
 .footer{
     background-color: #F9BE51;
     font-family: 'Roboto', sans-serif;
-    
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
 
@@ -568,6 +575,9 @@ max-width: 250px;
     width: 120px;
     height: 25px;
     border: none;
-    margin-top: 30px;
+    margin-top: 4px;
     cursor: pointer;
+}
+.suscribite-titulo{
+    margin-bottom: 0px;
 }
