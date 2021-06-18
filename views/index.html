@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERVELAND</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CERVELAND</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
   <header>
     <div class="main-header-container">
@@ -19,178 +21,182 @@
       <div>
         <img src="/images/Cerveland-Logo.jpeg" class="logo" alt="Cargando logo" />
       </div>
-     
+
 
       <nav class="main-nav-bar">
-          <ul>
-            <li><a href="#">CURSOS |</a></li>
-            <li><a href="#">INSUMOS |</a></li>
-            <li><a href="#">EQUIPAMIENTO</a></li>
-          </ul>
+        <ul>
+          <li><a href="#">CURSOS |</a></li>
+          <li><a href="#">INSUMOS |</a></li>
+          <li><a href="#">EQUIPAMIENTO</a></li>
+        </ul>
       </nav>
 
-      <div class="icons-nav-bar" >
+      <div class="icons-nav-bar">
         <button class="button-nav-bar"><i class="fas fa-search"></i></button>
         <button class="button-nav-bar"><i class="far fa-user"></i></button>
-          <button class="button-nav-bar"><i class="fas fa-shopping-cart"></i></button>      
+        <button class="button-nav-bar"><i class="fas fa-shopping-cart"></i></button>
       </div>
 
     </div>
   </header>
-    <div class="container-slider"></div>
-    <div class="slider" id="slider">
-      <ul>
-        <li> <img src="/images/produccion_banner.jpg" alt=""> </li>
-        <div class="slider__content">
-          <h2 class="slider__title"></h2>
-          <p class="slider__txt"></p>
-          <a href="" class="slider__link"> </a>
+  <div class="container-slider"></div>
+  <div class="slider" id="slider">
+    <ul>
+      <li> <img src="/images/produccion_banner.jpg" alt=""> </li>
+      <div class="slider__content">
+        <h2 class="slider__title"></h2>
+        <p class="slider__txt"></p>
+        <a href="" class="slider__link"> </a>
+      </div>
+      <li> <img src="/images/cursos_banner.jpg" alt=""> </li>
+      <div class="slider__content">
+        <h2 class="slider__title"></h2>
+        <p class="slider__txt"></p>
+      </div>
+      <li> <img src="/images/insumos_banner.jpg" alt=""> </li>
+      <div class="slider__content">
+        <h2 class="slider__title"></h2>
+        <p class="slider__txt"></p>
+      </div>
+    </ul>
+  </div>
+  <main class="main">
+    <h2 class="main-title">Cursos destacados</h2>
+    <section class="container-products">
+      <div class="product">
+        <img src="images/NIVEL_INICIAL.jpg" alt="" class="product__img-top">
+        <div class="product__description">
+          <h3 class="product__title">Nivel Inicial</h3>
+          <span class="product__price"><a href='#'>Ver más</a></span>
         </div>
-        <li> <img src="/images/cursos_banner.jpg" alt=""> </li>
-        <div class="slider__content">
-          <h2 class="slider__title"></h2>
-          <p class="slider__txt"></p>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="product">
+        <img src="images/NIVEL_INTERMEDIO.jpg" alt="" class="product__img-top">
+        <div class="product__description">
+          <h3 class="product__title">Nivel Intermedio</h3>
+          <span class="product__price"><a href='#'>Ver más</a></span>
         </div>
-        <li> <img src="/images/insumos_banner.jpg" alt=""> </li>
-        <div class="slider__content">
-          <h2 class="slider__title"></h2>
-          <p class="slider__txt"></p>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="product">
+        <img src="images/NIVEL_AVANZADO.jpg" alt="" class="product__img-top">
+        <div class="product__description">
+          <h3 class="product__title">Nivel Avanzado</h3>
+          <span class="product__price"><a href='#'>Ver más</a></span>
         </div>
-      </ul>
-    </div>
-    <main class="main">
-      <h2 class="main-title">Cursos destacados</h2>
-      <section class="container-products">
-        <div class="product">
-          <img src="images/NIVEL_INICIAL.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Nivel Inicial</h3>
-            <span class="product__price"><a href= '#'>Ver más</a></span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+    </section>
+    <h2 class="main-title">Productos destacados</h2>
+    <section class="container-products">
+      <div class="product">
+        <img src="images/levadura.jpg" alt="" class="product__img">
+        <div class="product__description">
+          <h3 class="product__title">Levadura 1kg</h3>
+          <span class="product__price">$500.00</span>
         </div>
-        <div class="product">
-          <img src="images/NIVEL_INTERMEDIO.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Nivel Intermedio</h3>
-            <span class="product__price"><a href= '#'>Ver más</a></span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="product">
+        <img src="images/malta.jpg" alt="" class="product__img">
+        <div class="product__description">
+          <h3 class="product__title">Malta 1kg</h3>
+          <span class="product__price">$800.00</span>
         </div>
-        <div class="product">
-          <img src="images/NIVEL_AVANZADO.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Nivel Avanzado</h3>
-            <span class="product__price"><a href= '#'>Ver más</a></span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="product">
+        <img src="images/lupulo_home.jpg" alt="" class="product__img">
+        <div class="product__description">
+          <h3 class="product__title">Lúpulo</h3>
+          <span class="product__price">$1200.00</span>
         </div>
-      </section>
-      <h2 class="main-title">Productos destacados</h2>
-      <section class="container-products">
-        <div class="product">
-          <img src="images/levadura.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Levadura 1kg</h3>
-            <span class="product__price">$500.00</span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+        <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+    </section>
+    <section class="container-extras">
+      <div class="details">
+        <div class="extras__description">
+          <i class="extras__icon fas fa-shipping-fast"></i>
+          <h3 class="extras__title">Envíos a todo el país</h3>
         </div>
-        <div class="product">
-          <img src="images/malta.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Malta 1kg</h3>
-            <span class="product__price">$800.00</span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="details">
+        <div class="extras__description">
+          <i class="extras__icon far fa-credit-card"></i>
+          <h3 class="extras__title">Medios de pago</h3>
         </div>
-        <div class="product">
-          <img src="images/lupulo_home.jpg" alt="" class="product__img">
-          <div class="product__description">
-            <h3 class="product__title">Lúpulo</h3>
-            <span class="product__price">$1200.00</span>
-          </div>
-          <i class="product__icon fas fa-shopping-cart"></i>
+      </div>
+      <div class="details">
+        <div class="extras__description">
+          <i class="extras__icon fas fa-store"></i>
+          <h3 class="extras__title">Productos de calidad</h3>
         </div>
-        <section class="container-extras">
-          <div class="details">
-            <div class="extras__description">
-              <i class="extras__icon fas fa-shipping-fast"></i>
-              <h3 class="extras__title">Envíos a todo el país</h3>
-            </div>
-          </div>
-          <div class="details">
-            <div class="extras__description">
-              <i class="extras__icon far fa-credit-card"></i>
-              <h3 class="extras__title">Medios de pago</h3>
-            </div>
-          </div>
-          <div class="details">
-            <div class="extras__description">
-              <i class="extras__icon fas fa-store"></i>
-              <h3 class="extras__title">Productos de calidad</h3>
-            </div>
-          </div>
-        </section>
-    </main> 
-    <footer class="footer">
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
 
-      <h2 style="text-align:center">CERVELAND</h2>
-      <p class="sobrenos-texto">Somos un equipo de gente apasionada por la cerveza, cuya meta es brindar todos los elementos necesarios para que los estusiastas de esta gran bebida puedan elaborarla en sus propios hogares.</p>
-      
-      <div class="sobrenos-iconos">
-          <div class="icon-footer">
-            <i class="fab fa-facebook" style="color:#FFFFFF"></i>
-          </div>       
-          <div class="icon-footer">
-            <i class="fab fa-instagram" style="color:#FFFFFF"></i>
-          </div>
-          <div class="icon-footer">
-            <i class="fab fa-twitter" style="color:#FFFFFF"></i>
-          </div>  
+    <h2 style="text-align:center" class="detail-title">CERVELAND</h2>
+    <p class="sobrenos-texto">Somos un equipo de gente apasionada por la cerveza, cuya meta es brindar todos los
+      elementos necesarios para que los estusiastas de esta gran bebida puedan elaborarla en sus propios hogares.</p>
+
+    <div class="sobrenos-iconos">
+      <div class="icon-footer">
+        <i class="fab fa-facebook" style="color:#FFFFFF"></i>
       </div>
-      <br>
-      <br>
-      <br>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Sobre nosotros</button>
+      <div class="icon-footer">
+        <i class="fab fa-instagram" style="color:#FFFFFF"></i>
       </div>
-      <br>
-      <hr class="divisoria">
-      <h2 style="text-align:center" class="suscribite-titulo">SUSCRIBITE</h2>
-      
-      <br>
-      <div class="form-content">
-          <i class="fas fa-user"></i>
-          <input class="form-inputs" type="text" name="userName" placeholder="User name" required>
+      <div class="icon-footer">
+        <i class="fab fa-twitter" style="color:#FFFFFF"></i>
       </div>
-      
-      <div class="form-content">
-          <i class="fas fa-envelope"></i>
-          <input class="form-inputs" type="email" name="userEmail" placeholder="E-mail" required>
-      </div>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Suscribirme</button>
-      </div>
-      
-      <br>
-      <hr class="divisoria">
-      <h2 style="text-align:center">CONTACTO</h2>
-      
-      <p>Av. Corrientes 4050</p>
-      <p>(011) 4795-5678</p>
-      <p>info@cerveland.com.ar</p>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Contactanos</button>
-      </div>
-      
-      <p style="font-size: 10px; margin-top: 50px;">COPYRIGHT2021  <i class="far fa-copyright"></i> CERVELAND - INSUMOS CERVECEROS</p>
-      
-      </footer>
-      
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="buttons-footer">
+      <button class="button-sobrenos" type="submit">Sobre nosotros</button>
+    </div>
+    <br>
+    <hr class="divisoria">
+    <h2 style="text-align:center" class="suscribite-titulo">SUSCRIBITE</h2>
+
+    <br>
+    <div class="form-content">
+      <i class="fas fa-user"></i>
+      <input class="form-inputs" type="text" name="userName" placeholder="User name" required>
+    </div>
+
+    <div class="form-content">
+      <i class="fas fa-envelope"></i>
+      <input class="form-inputs" type="email" name="userEmail" placeholder="E-mail" required>
+    </div>
+
+    <div class="buttons-footer">
+      <button class="button-sobrenos" type="submit">Suscribirme</button>
+    </div>
+
+    <br>
+    <hr class="divisoria">
+    <h2 style="text-align:center">CONTACTO</h2>
+
+    <p>Av. Corrientes 4050</p>
+    <p>(011) 4795-5678</p>
+    <p>info@cerveland.com.ar</p>
+
+    <div class="buttons-footer">
+      <button class="button-sobrenos" type="submit">Contactanos</button>
+    </div>
+
+    <p style="font-size: 10px; margin-top: 50px;">COPYRIGHT2021 <i class="far fa-copyright"></i> CERVELAND - INSUMOS
+      CERVECEROS</p>
+
+  </footer>
+
 
 </body>
+
 </html>
