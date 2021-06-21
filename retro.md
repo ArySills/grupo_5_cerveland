@@ -1,3 +1,4 @@
+RETRO SPRINT 1
 Comenzar a hacer:
 Tener horarios fijos.
 Una reunión semanal de planning y una reunión semanal para revisar avances.
@@ -15,3 +16,19 @@ Reuniones sin tener presente cuál es el tema a tratar.
 
 Dejar de hacer:
 Pruebas sobre la carpeta del proyecto, y tener una carpeta de pruebas para ello.
+
+RETRO SPRINT 2
+
+Comenzar a hacer: 
+- Tener preparado tablero de retro y del próximo sprint para ahorrar tiempo
+- Musicalizar reuniones
+- Hacer más: Actualizar las tareas en Trello
+Continuar haciendo: 
+- Ceremonias de weekly para planificar y controlar avances
+- Comunicación fluida
+- Revisión de dudas sobre los contenidos del curso
+- Buena coordinación para asignar tareas
+- Cumplimiento de las tareas asignadas
+- Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
+
+RETRO SPRINT 3
