@@ -1,25 +1,28 @@
-const express = require ("express");
+const express = require ('express');
 const app = express();
 
 const path = require('path');
 const publicPath = path.resolve(__dirname, 'public');
+const rutaProductos = require ('./routes/product');
+const rutaCarrito = require ('./routes/cart');
+const rutaRegister = require ('./routes/register');
+const rutaIndex = require ('./routes/index');
 
 app.use(express.static(publicPath));
 
+app.set("view engine", "ejs");
+
 app.listen (3030, console.log("servidor levantado"));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'));
-})
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'));
-})
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'));
-})
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html'));
-})
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html'));
-})
+
+app.use('/product', rutaProductos);
+
+app.use('/cart', rutaCarrito);
+
+app.use('/register', rutaRegister);
+
+app.use('/', rutaIndex);
+
+
+
+
