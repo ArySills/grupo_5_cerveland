@@ -1,42 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />     
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
-        
-</head>
+    <%- include('../partials/head') %>
 <body class="bodyLogin">
-    <header>
-        <div class="main-header-container">
-    
-          <div>
-            <img src="/images/Cerveland-Logo.jpeg" class="logo" alt="Cargando logo" />
-          </div>
-         
-    
-          <nav class="main-nav-bar">
-              <ul>
-                <li><a href="#">CURSOS |</a></li>
-                <li><a href="#">INSUMOS |</a></li>
-                <li><a href="#">EQUIPAMIENTO</a></li>
-              </ul>
-          </nav>
-    
-          <div class="icons-nav-bar" >
-            <button class="button-nav-bar"><i class="fas fa-search"></i></button>
-            <button class="button-nav-bar"><i class="far fa-user"></i></button>
-              <button class="button-nav-bar"><i class="fas fa-shopping-cart"></i></button>      
-          </div>
-    
-        </div>
-      </header>
-
+    <%- include('../partials/header') %>
     <div class="formulario">
         <form  action="/register" method="POST" class="form-container">
             <h2 class="h2Login">Bienvenido !</h2>
@@ -77,62 +43,6 @@ rel="stylesheet" />
 
         </form>
     </div>
-<footer class="footer">
-
-      <h2 style="text-align:center" class="detail-title">CERVELAND</h2>
-      <p class="sobrenos-texto">Somos un equipo de gente apasionada por la cerveza, cuya meta es brindar todos los elementos necesarios para que los estusiastas de esta gran bebida puedan elaborarla en sus propios hogares.</p>
-      
-      <div class="sobrenos-iconos">
-          <div class="icon-footer">
-            <i class="fab fa-facebook" style="color:#FFFFFF"></i>
-          </div>       
-          <div class="icon-footer">
-            <i class="fab fa-instagram" style="color:#FFFFFF"></i>
-          </div>
-          <div class="icon-footer">
-            <i class="fab fa-twitter" style="color:#FFFFFF"></i>
-          </div>  
-      </div>
-      <br>
-      <br>
-      <br>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Sobre nosotros</button>
-      </div>
-      <br>
-      <hr class="divisoria">
-      <h2 style="text-align:center" class="suscribite-titulo">SUSCRIBITE</h2>
-      
-      <br>
-      <div class="form-content">
-          <i class="fas fa-user"></i>
-          <input class="form-inputs" type="text" name="userName" placeholder="User name" required>
-      </div>
-      
-      <div class="form-content">
-          <i class="fas fa-envelope"></i>
-          <input class="form-inputs" type="email" name="userEmail" placeholder="E-mail" required>
-      </div>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Suscribirme</button>
-      </div>
-      
-      <br>
-      <hr class="divisoria">
-      <h2 style="text-align:center">CONTACTO</h2>
-      
-      <p>Av. Corrientes 4050</p>
-      <p>(011) 4795-5678</p>
-      <p>info@cerveland.com.ar</p>
-      
-      <div class="buttons-footer">
-          <button  class="button-sobrenos" type="submit">Contactanos</button>
-      </div>
-      
-      <p style="font-size: 10px; margin-top: 50px;">COPYRIGHT2021  <i class="far fa-copyright"></i> CERVELAND - INSUMOS CERVECEROS</p>
-      
-      </footer>
+    <%- include('../partials/footer') %>
 </body>
 </html>
