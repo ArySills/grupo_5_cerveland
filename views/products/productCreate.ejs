@@ -1,0 +1,51 @@
+
+html <!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="formulario">
+            <form  action="/register" method="POST" class="form-container">
+                <h2 class="h2Login">Agregá un nuevo producto</h2>
+                
+                <div>
+                    <div class="form-content">
+                        <input type="text" name="productName" placeholder="Nombre producto" required>
+                    </div>
+                    <br></br>
+                    <input type="file" name="productImagen">
+                    <br></br>
+                    <div class="form-content">
+                        <label>Categoría</label>
+                        <input type="radio" name="productCategory" value="insumo" required>Insumo
+                        <input type="radio" name="productCategory" value="equipos" required>Equipos
+                    </div>
+                    <br></br>
+                    <div class="form-content">
+                        <Label>Precio: </Label>
+                        <input class="form-inputs" name="productPrice" value="0" type="number" placeholder="1.0" step="0.01" min="0" max="10"  required>
+                    </div>
+                    <br></br>
+                    <div class="form-content">
+                        <Label>Descripción: </Label>
+                        <input class="" type="text" name="productDescription" placeholder="Agregue una descripción" required>
+                    </div>
+            
+
+                    <div class="buttons">
+                        <button  class="login-button" type="submit">Agregar</button>
+                        <button  class="login-button" type="submit">Cancelar</button>
+                    </div>
+    
+        
+                </div>
+    
+            </form>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
