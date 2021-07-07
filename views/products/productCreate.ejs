@@ -5,31 +5,48 @@ html <!DOCTYPE html>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="formulario">
-            <form  action="/register" method="POST" class="form-container">
-                <h2 class="h2Login">Agregá un nuevo producto</h2>
-                
+        <div class="formulario-product-create">
+            <div>
+                <h2 class="h2-create-product">Agregá un nuevo producto</h2>
+            </div>
+            
+            <form  action="/register" method="POST" class="form-container-create-product">
                 <div>
                     <div class="form-content">
-                        <input type="text" name="productName" placeholder="Nombre producto" required>
+                        <input class="input-product-name-create" type="text" name="productName" placeholder="Nombre producto" required>
                     </div>
+
                     <br></br>
-                    <input type="file" name="productImagen">
+                    
+                    <div>
+                        <input class="input-product-image-create" type="file" name="productImagen">
+                    </div>
+                    
+
                     <br></br>
+
                     <div class="form-content">
                         <label>Categoría</label>
-                        <input type="radio" name="productCategory" value="insumo" required>Insumo
-                        <input type="radio" name="productCategory" value="equipos" required>Equipos
+                        <br></br>
+                        <input class="input-product-category-create" type="radio" name="productCategory" value="insumo" required>Insumo
+                        <input class="input-product-category-create" type="radio" name="productCategory" value="equipos" required>Equipo
                     </div>
+
                     <br></br>
+
                     <div class="form-content">
-                        <Label>Precio: </Label>
+                        <Label>Precio</Label>
+                        <br></br>
                         <input class="form-inputs" name="productPrice" value="0" type="number" placeholder="1.0" step="0.01" min="0" max="10"  required>
                     </div>
+
                     <br></br>
+
                     <div class="form-content">
-                        <Label>Descripción: </Label>
-                        <input class="" type="text" name="productDescription" placeholder="Agregue una descripción" required>
+                        <Label>Descripción </Label>
+                        <br></br>
+                        <textarea class="textarea-product-description-create" name="productDescription" placeholder="Agregue una descripción" required>
+                        </textarea>
                     </div>
             
 
