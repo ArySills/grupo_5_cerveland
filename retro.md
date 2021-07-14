@@ -32,3 +32,16 @@ Continuar haciendo:
 - Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
 
 RETRO SPRINT 3
+Continuar haciendo: 
+- Ceremonias de weekly para planificar y controlar avances
+- Comunicación fluida
+- Revisión de dudas sobre los contenidos del curso
+- Buena coordinación para asignar tareas
+- Cumplimiento de las tareas asignadas
+- Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
+- Tener preparado tablero de retro y del próximo sprint para ahorrar tiempo
+- Musicalizar reuniones
+- Actualizar las tareas en Trello
+Empezar a hacer:
+- Mindfulness
+- Catarsis grupal
