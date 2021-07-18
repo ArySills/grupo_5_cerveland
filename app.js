@@ -10,9 +10,10 @@ const rutaIndex = require ('./routes/index');
 
 
 app.use(express.static(publicPath));
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.set("view engine", "ejs");
-
+app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 app.listen (3000, console.log("servidor levantado"));
 
 
@@ -29,3 +30,6 @@ app.use('/register', rutaRegister);
 
 
 
+
+
+module.exports = app;

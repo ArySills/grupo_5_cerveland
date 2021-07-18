@@ -18,23 +18,36 @@ const controlador = {
         product
     }
 
-    return res.render("products/productDetail", viewData)
+    return res.render('products/productDetail', viewData)
 	},
+    agregar: (req, res) => { 
+        return res.render('products/productCreate')
+    },
+    guardar: (req, res) => { 
 
+        const lastProduct = products[products.length -1]; //Buscamos el último producto
+        const productToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
+        
+        productToCreate.id = lastProduct.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
 
+        products.push(productToCreate); //Agregamos el nuevoproducto al array de productos
 
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)); 
 
-    
-    guardar: (req, res) => { res.redirect(303,'products/productList')},
-    editar:  (req, res) => { res.render('products/:id/edit')},
-    guardarEdicion: (req, res) => { res.render('products/:id')},
-    borrar: (req, res) => { res.render('products/:id')},
-
-
-
-
-    agregar: (req, res) => { res.render('products/productCreate')},
-    listado: (req, res) => { res.render('products/productList')},
-
+        res.redirect(303,'product')
+    },
+    editar:  (req, res) => {
+         res.render('products/:id/edit')
+        },
+    guardarEdicion: (req, res) => { 
+        res.render('products/:id')
+    },
+    borrar: (req, res) => { 
+        res.render('products/:id')
+    },
+    listado: (req, res) => { 
+        return res.render('products/productList')
+    }
 };
+
 module.exports = controlador;

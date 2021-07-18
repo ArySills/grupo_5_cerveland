@@ -34,5 +34,53 @@
     "description": "Este curso está dirigido a quienes quieren elaborar cerveza de manera artesanal y casera.Aprenderás toda la teoría y la práctica para hacer diferentes estilos de cerveza.",
     "packaging": "1",
     "image": "NIVEL_INICIAL.jpg"
+  },
+  {
+    "productName": "Lupulo",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "6",
+    "productDescription": "Lupulito                        ",
+    "id": 5
+  },
+  {
+    "productName": "Lupulo",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "6",
+    "productDescription": "Lupulito                        ",
+    "id": 6
+  },
+  {
+    "productName": "Botella grande",
+    "productImagen": "",
+    "productCategory": "equipos",
+    "productPrice": "3",
+    "productDescription": "  BOtellooon                      ",
+    "id": 7
+  },
+  {
+    "productName": "ascdfdsafsdf",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "7",
+    "productDescription": "      fdgdfg                  ",
+    "id": 8
+  },
+  {
+    "productName": "fdsfs",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "4",
+    "productDescription": "             redtgdrfgtdfgdf           ",
+    "id": 9
+  },
+  {
+    "productName": "gfdgfd",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "6",
+    "productDescription": "             gfhgf           ",
+    "id": 10
   }
 ]
