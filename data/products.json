@@ -1,39 +1,39 @@
 [
   {
     "id": 1,
-    "name": "Malta Munich",
-    "price": "300",
-    "category": "Insumo",
-    "description": "Con un contenido menor de enzimas que la malta Pilsen, la malta Munich se usa para mejorar el cuerpo, color, aroma y sabor de cervezas oscuras.",
+    "productName": "Malta Munich",
+    "productPrice": "300",
+    "productCategory": "Insumo",
+    "productDescription": "Con un contenido menor de enzimas que la malta Pilsen, la malta Munich se usa para mejorar el cuerpo, color, aroma y sabor de cervezas oscuras.",
     "packaging": "1kg",
-    "image": "malta munich.jpg"
+    "productImagen": "malta munich.jpg"
   },
   {
     "id": 2,
-    "name": "Lúpulo",
-    "price": "100",
-    "category": "Insumo",
-    "description": "Lúpulo envasado al vacío en bolsas aluminizadas trilaminadas para conservar en forma óptima su calidad Original. ",
+    "productName": "Lúpulo",
+    "productPrice": "100",
+    "productCategory": "Insumo",
+    "productDescription": "Lúpulo envasado al vacío en bolsas aluminizadas trilaminadas para conservar en forma óptima su calidad Original. ",
     "packaging": "1kg",
-    "image": "lupulo.jpg"
+    "productImagen": "lupulo.jpg"
   },
   {
     "id": 3,
-    "name": "Growler",
-    "price": "100",
-    "category": "Equipo",
-    "description": "Growler de 2 litros, mantiene la cerveza fría por 24 horas, permitiendo transportarla con estilo funcional y práctico. La boca ancha permite un llenado rápido, y una sencilla limpieza. La tapa aislante de espuma, junto con su interior sellado al vacío, mantiene baja la temperatura por 24 horas.",
+    "productName": "Growler",
+    "productPrice": "100",
+    "productCategory": "Equipo",
+    "productDescription": "Growler de 2 litros, mantiene la cerveza fría por 24 horas, permitiendo transportarla con estilo funcional y práctico. La boca ancha permite un llenado rápido, y una sencilla limpieza. La tapa aislante de espuma, junto con su interior sellado al vacío, mantiene baja la temperatura por 24 horas.",
     "packaging": "1ud",
-    "image": "growler.jpg"
+    "productImagen": "growler.jpg"
   },
   {
     "id": 4,
-    "name": "Curso inicial",
-    "price": "100",
-    "category": "Curso",
-    "description": "Este curso está dirigido a quienes quieren elaborar cerveza de manera artesanal y casera.Aprenderás toda la teoría y la práctica para hacer diferentes estilos de cerveza.",
+    "productName": "Curso inicial",
+    "productPrice": "100",
+    "productCategory": "Curso",
+    "productDescription": "Este curso está dirigido a quienes quieren elaborar cerveza de manera artesanal y casera.Aprenderás toda la teoría y la práctica para hacer diferentes estilos de cerveza.",
     "packaging": "1",
-    "image": "NIVEL_INICIAL.jpg"
+    "productImagen": "NIVEL_INICIAL.jpg"
   },
   {
     "productName": "Lupulo",
@@ -82,5 +82,13 @@
     "productPrice": "6",
     "productDescription": "             gfhgf           ",
     "id": 10
+  },
+  {
+    "productName": "afaca",
+    "productImagen": "",
+    "productCategory": "insumo",
+    "productPrice": "1",
+    "productDescription": "                  khkh      ",
+    "id": 11
   }
 ]

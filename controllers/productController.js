@@ -37,9 +37,25 @@ const controlador = {
         res.redirect(303,'product')
     },
     editar:  (req, res) => {
-         res.render('products/:id/edit')
+
+        const id = req.params.id;
+		const product = products.find((prod) => prod.id == id);
+		if(!product) {
+			return res.send('ERROR NO HAY PRODUCTO')
+		}
+		const viewData = {
+			product
+		}
+		return res.render('products/productEdit', viewData)
         },
+
+
+
+
+
+
     guardarEdicion: (req, res) => { 
+
         res.render('products/:id')
     },
     borrar: (req, res) => { 
