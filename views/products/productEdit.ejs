@@ -50,7 +50,7 @@
             
 
                     <div class="buttons">
-                        <button  class="login-button" type="submit">Agregar</button>
+                        <button  class="login-button" type="submit">Editar</button>
                         <button  class="login-button" type="submit">Cancelar</button>
                     </div>
     
@@ -58,6 +58,12 @@
                 </div>
     
             </form>
+
+            <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit">ELIMINAR</button>
+            </form>
+
+
         </div>
 
     </main>

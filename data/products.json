@@ -1,23 +1,5 @@
 [
   {
-    "id": 1,
-    "productName": "Malta Munich",
-    "productPrice": "300",
-    "productCategory": "Insumo",
-    "productDescription": "Con un contenido menor de enzimas que la malta Pilsen, la malta Munich se usa para mejorar el cuerpo, color, aroma y sabor de cervezas oscuras.",
-    "packaging": "1kg",
-    "productImagen": "malta munich.jpg"
-  },
-  {
-    "id": 2,
-    "productName": "Lúpulo",
-    "productPrice": "100",
-    "productCategory": "Insumo",
-    "productDescription": "Lúpulo envasado al vacío en bolsas aluminizadas trilaminadas para conservar en forma óptima su calidad Original. ",
-    "packaging": "1kg",
-    "productImagen": "lupulo.jpg"
-  },
-  {
     "id": 3,
     "productName": "Growler",
     "productPrice": "100",
@@ -36,7 +18,7 @@
     "productImagen": "NIVEL_INICIAL.jpg"
   },
   {
-    "productName": "Lupulo",
+    "productName": "hola",
     "productImagen": "",
     "productCategory": "insumo",
     "productPrice": "6",
@@ -90,5 +72,13 @@
     "productPrice": "1",
     "productDescription": "                  khkh      ",
     "id": 11
+  },
+  {
+    "productName": "manguera",
+    "productImagen": "",
+    "productCategory": "equipos",
+    "productPrice": "2",
+    "productDescription": "       manguerota                 ",
+    "id": 12
   }
 ]
