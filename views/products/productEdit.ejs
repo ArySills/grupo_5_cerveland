@@ -6,13 +6,13 @@
     <main>
         <div class="formulario-product-create">
             <div>
-                <h2 class="h2-create-product">Agregá un nuevo producto</h2>
+                <h2 class="h2-create-product">Estás editando: <i> <%= product.productName  %> </i></h2>
             </div>
             
-            <form  action="/product" method="POST" class="form-container-create-product">
+            <form  action="/product/<%= product.id %>?_method=PUT" method="POST" class="form-container-create-product">
                 <div>
                     <div class="form-content">
-                        <input class="input-product-name-create" type="text" name="productName" placeholder="Nombre producto" required>
+                        <input class="input-product-name-create" type="text" value="<%= product.productName %>" name="productName" required>
                     </div>
 
                     <br></br>
@@ -36,7 +36,7 @@
                     <div class="form-content">
                         <Label>Precio</Label>
                         <br></br>
-                        <input class="form-inputs" name="productPrice" value="0" type="number" placeholder="1.0" step="0.01" min="0" max="10"  required>
+                        <input class="form-inputs" name="productPrice" value="<%= product.productPrice %>" type="number" placeholder="1.0" step="0.01" min="0" max="10"  required>
                     </div>
 
                     <br></br>
@@ -44,13 +44,13 @@
                     <div class="form-content">
                         <Label>Descripción </Label>
                         <br></br>
-                        <textarea class="textarea-product-description-create" name="productDescription" placeholder="Agregue una descripción" required>
-                        </textarea>
+                        <input class="textarea-product-description-create" value="<%= product.productDescription %>" name="productDescription" placeholder="Agregue una descripción" required>
+                        
                     </div>
             
 
                     <div class="buttons">
-                        <button  class="login-button" type="submit">Agregar</button>
+                        <button  class="login-button" type="submit">Editar</button>
                         <button  class="login-button" type="submit">Cancelar</button>
                     </div>
     
@@ -58,6 +58,12 @@
                 </div>
     
             </form>
+
+            <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit">ELIMINAR</button>
+            </form>
+
+
         </div>
 
     </main>

@@ -5,16 +5,16 @@
 <body>
 <%- include('../partials/header') %>
 <main class="product-detail">
-    <h2 class="detail-title"><%= product.name %></h2>
+    <h2 class="detail-title"><%= product.productName %></h2>
 <div>
-    <img src="/images/<%= product.image %>" class="foto-ampliada">
+    <img src="/images/<%= product.productImagen %>" class="foto-ampliada">
 </div>
 
 <div>       
 
 <h2><%= product.packaging %></h2> 
     
-<h2>$<%= product.price %></h2>
+<h2>$<%= product.productPrice %></h2>
 
 <div class="caja-cantidad">
     <div>
@@ -33,7 +33,7 @@
 <a role="button" id="add_to_cart" class="btn" href="#"
             ><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>
 
-<p><%= product.description %></p>
+<p><%= product.productDescription %></p>
 
 <hr class="divisoria">
 

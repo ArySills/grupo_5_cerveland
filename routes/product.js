@@ -7,7 +7,7 @@ const productController = require ('../controllers/productController');
 router.get('/',productController.listado);
 
 //Formalio de creación de productos
-router.get('/create',productController.agregar);
+router.get('/create/',productController.agregar);
 
 //Acción de creación
 router.post('/',productController.guardar);
