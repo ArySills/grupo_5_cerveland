@@ -5,35 +5,16 @@
 <body>
 <%- include('../partials/header') %>
 <main class="product-detail">
-    <h2 class="detail-title">Malta Munich</h2>
+    <h2 class="detail-title"><%= product.name %></h2>
 <div>
-    <img src="/images/malta munich.jpg" class="foto-ampliada">
+    <img src="/images/<%= product.image %>" class="foto-ampliada">
 </div>
 
 <div>       
 
+<h2><%= product.packaging %></h2> 
     
-    <div>
-		<form action="" method="POST">
-				<h2 class="cantidad">Cantidad</h2>
-                <ul type="none" class="listita">
-                    <li>
-				        <input type="radio" name="presentaciones" id="1 Kg">
-				        <label for="1 Kg">1 Kg</label>
-                    </li>
-                    <br>
-                    <li>
-				        <input type="radio" name="presentaciones" id="5 Kg">
-				        <label for="5 Kg">5 Kg</label>
-                    </li>
-                    <br>
-                    <li>
-				        <input type="radio" name="presentaciones" id="25 Kg">
-				        <label for="25 Kg">25 Kg</label>
-                    </li>
-            </ul>
-    </div>
-<h2>$ 2,390.00</h2>
+<h2>$<%= product.price %></h2>
 
 <div class="caja-cantidad">
     <div>
@@ -52,7 +33,7 @@
 <a role="button" id="add_to_cart" class="btn" href="#"
             ><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>
 
-<p>Con un contenido menor de enzimas que la malta Pilsen, la malta Munich se usa para mejorar el cuerpo, color, aroma y sabor de cervezas oscuras.</p>
+<p><%= product.description %></p>
 
 <hr class="divisoria">
 
