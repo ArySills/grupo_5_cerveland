@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="formulario-product-create">
+            <div>
+                <h2 class="h2-create-product">Configurá tu perfil</h2>
+            </div>
+            
+            <form  action="/users" method="POST" class="form-container-create-product">
+                <div>
+                    <div class="form-content">
+                        <input class="input-product-name-create" type="text" name="userFirstName" placeholder="Nombre usuario" required>
+                        <input class="input-product-name-create" type="text" name="userLastName" placeholder="Apellido usuario" required>
+                    </div>
+
+                    <br></br>
+                    
+                    <div>
+                        <input class="input-product-image-create" type="file" name="profileImage">
+                    </div>
+                    
+
+                    <br></br>
+
+                    <div class="form-content">
+                        <label>Rol</label>
+                        <br></br>
+                        <input class="input-product-category-create" type="radio" name="productCategory" value="insumo" required checked>Customer
+                        
+                    </div>
+
+                    <br></br>
+
+                                     <br></br>
+            
+
+                    <div class="buttons">
+                        <button  class="login-button" type="submit">Guardar</button>
+                        <button  class="login-button" type="submit">Cancelar</button>
+                    </div>
+    
+        
+                </div>
+    
+            </form>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

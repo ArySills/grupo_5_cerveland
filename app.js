@@ -8,6 +8,7 @@ const rutaProductos = require ('./routes/product');
 const rutaCarrito = require ('./routes/cart');
 const rutaRegister = require ('./routes/register');
 const rutaIndex = require ('./routes/index');
+const userRoute = require ('./routes/users');
 
 
 app.use(methodOverride('_method'));
@@ -27,7 +28,7 @@ app.use('/cart', rutaCarrito);
 
 app.use('/register', rutaRegister);
 
-
+app.use('/myProfile', userRoute);
 
 
 
