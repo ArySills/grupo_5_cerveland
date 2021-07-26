@@ -32,7 +32,4 @@ app.use('/myProfile', userRoute);
 
 
 
-
-
-
 module.exports = app;
