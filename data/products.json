@@ -1,12 +1,12 @@
 [
   {
     "id": 3,
-    "productName": "Growler",
-    "productPrice": "100",
-    "productCategory": "Equipo",
+    "productName": "hOLA",
+    "productPrice": "2",
+    "productCategory": "insumo",
     "productDescription": "Growler de 2 litros, mantiene la cerveza fría por 24 horas, permitiendo transportarla con estilo funcional y práctico. La boca ancha permite un llenado rápido, y una sencilla limpieza. La tapa aislante de espuma, junto con su interior sellado al vacío, mantiene baja la temperatura por 24 horas.",
     "packaging": "1ud",
-    "productImagen": "growler.jpg"
+    "productImagen": ""
   },
   {
     "id": 4,

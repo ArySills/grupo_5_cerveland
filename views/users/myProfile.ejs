@@ -12,9 +12,9 @@
             <form  action="/myProfile/<%= user.id %>?_method=PUT" method="POST" enctype = "multipart/form-data" class= "form-container-create-product">
                 <div>
                     <div class="form-content">
-                        <input class="input-product-name-create" type="text" name="userFirstName" placeholder="Nombre" required>
-                        <input class="input-product-name-create" type="text" name="userLastName" placeholder="Apellido" required>
-                        <input class="input-product-name-create" type="text" name="userLastName" placeholder="Usuario" required>
+                        <input class="input-product-name-create" type="text" name="firstName" value="<%= user.firstName %>"  placeholder="Nombre" required>
+                        <input class="input-product-name-create" type="text" name="lastName" value="<%= user.lastName %>" placeholder="Apellido" required>
+                        <input class="input-product-name-create" type="text" name="userName" value="<%= user.userName %>" placeholder="Usuario" required>
                     </div>
 
                     <br></br>

@@ -19,7 +19,7 @@ return res.render('users/myProfile', viewData)
 save: (req, res) => {         
     // ENCONTRAR EL INDICE DEL USUARIO EN EL ARRAY
     // EN BASE A SU ID
-    const indiceDelUsuario = users.findIndex( users => users.id == req.params.id);
+    const indiceDelUsuario = users.findIndex( user => user.id == req.params.id);
 
     // users[indice encontrado] == usuario en el array
     users[indiceDelUsuario] = { ...users[indiceDelUsuario] , ...req.body };
@@ -28,8 +28,8 @@ save: (req, res) => {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 
     // REDIRECCIONAR AL HOME
-
-    res.redirect(303,'/');
+return res.send (users);
+//res.redirect(303,'/');
 
 
 },
