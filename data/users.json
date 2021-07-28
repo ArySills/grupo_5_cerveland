@@ -6,19 +6,17 @@
     "Email": "ceiizapiola@gmail.com",
     "Password": "Celeslanumber1",
     "Role": "Admin"
-
-},
-{
+  },
+  {
     "id": 2,
     "First name": "Camila",
     "Last name": "Belloni",
     "User name": "CamiBelloo",
     "Email": "camibelloni@gmail.com",
     "Password": "Camifernetera88",
-    "Role":"Admin"
-
-},
-{
+    "Role": "Admin"
+  },
+  {
     "id": 3,
     "First name": "Tomas",
     "Last name": "Brusca",
@@ -26,8 +24,8 @@
     "Email": "tomasbrusca@gmail.com",
     "Password": "Ellocobrusca22",
     "Role": "Customer"
-},    
-{
+  },
+  {
     "id": 4,
     "First name": "Ary",
     "Last name": "Sills",
@@ -35,5 +33,5 @@
     "Email": "ary.sills@gmail.com",
     "Password": "Aroldo1234",
     "Role": "Admin"
-
-}]
+  }
+]
