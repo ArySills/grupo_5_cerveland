@@ -9,7 +9,7 @@
                 <h2 class="h2-create-product">Configurá tu perfil</h2>
             </div>
             
-            <form  action="/myProfile/<%= user.id %>?_method=PUT" method="POST" enctype = "multipart/form-data" class= "form-container-create-product">
+            <form  action="/myProfile/<%= user.id %>?_method=PUT" method="POST" class= "form-container-create-product">
                 <div>
                     <div class="form-content">
                         <input class="input-product-name-create" type="text" name="firstName" value="<%= user.firstName %>"  placeholder="Nombre" required>
