@@ -17,12 +17,8 @@ const fileUpload = multer ({storage});
 
 router.get('/:id',userController.detail);
 
-
-//router.post('/', fileUpload.single('profileImage'));
-
-
 //Acción de edición (a donde se envía el formulario)
-router.put('/:id',userController.save);
+router.put('/:id',fileUpload.single('profileImage'), userController.save);
 
 
 

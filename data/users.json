@@ -6,6 +6,7 @@
     "userName": "CelesZapio",
     "email": "ceiizapiola@gmail.com",
     "password": "Celeslanumber1",
+    "profileImage": "",
     "role": "Admin"
   },
   {
@@ -15,6 +16,7 @@
     "userName": "CamiBelloo",
     "email": "camibelloni@gmail.com",
     "password": "Camifernetera88",
+    "profileImage": "",
     "role": "Admin"
   },
   {
@@ -24,6 +26,7 @@
     "userName": "TomasitoBrussca",
     "email": "tomasbrusca@gmail.com",
     "password": "Ellocobrusca22",
+    "profileImage": "",
     "role": "Customer"
   },
   {
@@ -33,6 +36,7 @@
     "userName": "Arytosills",
     "email": "ary.sills@gmail.com",
     "password": "Aroldo1234",
+    "profileImage": "",
     "role": "Admin"
   }
 ]
