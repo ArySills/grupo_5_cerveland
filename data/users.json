@@ -12,12 +12,13 @@
   {
     "id": 2,
     "firstName": "Camila",
-    "lastName": "Belloni",
+    "lastName": "paez",
     "userName": "CamiBelloo",
     "email": "camibelloni@gmail.com",
     "password": "Camifernetera88",
-    "profileImage": "",
-    "role": "Admin"
+    "profileImage": "user1627572309111.jpeg",
+    "role": "Admin",
+    "productCategory": "insumo"
   },
   {
     "id": 3,

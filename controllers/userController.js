@@ -37,15 +37,19 @@ const controller = {
         const indiceDelUsuario = users.findIndex( user => user.id == req.params.id);
 
         // users[indice encontrado] == usuario en el array
-        users[indiceDelUsuario] = { ...users[indiceDelUsuario] , ...req.body };
+        const nuevosDatos = {
+            ...req.body,
+            profileImage: req.file.filename
+        }
+        users[indiceDelUsuario] = { ...users[indiceDelUsuario] , ...nuevosDatos };
 
-        return res.send(req.body);
+        
         // GUARDAR LA NUEVA BASE DE DATOS
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 
         // REDIRECCIONAR AL HOME
-   // return res.send (users);
-    //res.redirect(303,'/');
+   //return res.send (req.body);
+    res.redirect(303,'/');
 
 
     },
