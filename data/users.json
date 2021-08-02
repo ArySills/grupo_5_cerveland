@@ -58,5 +58,11 @@
     "userEmail": "peterrrrr@gmail.com",
     "userPassword": "$2a$10$QlYX0xJl67qzHTlF9lFPlezM1JZhhHG1OcqsLzLhqUbiIkV/Qw3SS",
     "id": 7
+  },
+  {
+    "userName": "Juan Perez",
+    "userEmail": "juan.perez@gmial.com",
+    "userPassword": "$2a$10$TGdxNBXM1T2Jt2onpxUnceEebZbb.GkytRHgnPQ/uZVssAMZFEAP6",
+    "id": 8
   }
 ]
