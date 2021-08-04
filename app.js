@@ -10,7 +10,7 @@ const rutaRegister = require ('./routes/register');
 const rutaIndex = require ('./routes/index');
 const userRoute = require ('./routes/users');
 const session = require ('express-session');
-
+const userLogin = require ('./routes/login');
 
 app.use(methodOverride('_method'));
 app.use(express.static(publicPath));
@@ -32,6 +32,6 @@ app.use('/register', rutaRegister);
 
 app.use('/myProfile', userRoute);
 
-
+app.use('/login', userLogin);
 
 module.exports = app;
