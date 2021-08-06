@@ -7,10 +7,13 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcryptjs = require ('bcryptjs');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const {validationResult} = require ('express-validator')
 
 const controlador = {
     detalle: (req, res)=>{res.render('users/register')},
     create: (req, res) => { 
+        let errors = validationResult(req);
+       return res.send (errors);
 
         const lastUser = users[users.length -1]; //Buscamos el último usuario
         const userToCreate = {
