@@ -10,8 +10,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     login: (req, res)=>{
-        
-        
+              
         let errors = validationResult(req); 
         let userLogged = '';
         if (errors.isEmpty()){
