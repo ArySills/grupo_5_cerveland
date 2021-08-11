@@ -41,7 +41,7 @@ const controlador = {
         const id = req.params.id;
 		const product = products.find((prod) => prod.id == id);
 		if(!product) {
-			return res.send('ERROR NO HAY PRODUCTO')
+			return res.send('El producto no existe')
 		}
 		const viewData = {
 			product
