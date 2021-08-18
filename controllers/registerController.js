@@ -13,8 +13,7 @@ const controlador = {
     detalle: (req, res)=>{res.render('users/register')},
     create: (req, res) => { 
         let errors = validationResult(req);
-       return res.send (errors);
-
+     
         const lastUser = users[users.length -1]; //Buscamos el último usuario
         const userToCreate = {
             ...req.body,

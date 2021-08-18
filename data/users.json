@@ -4,8 +4,8 @@
     "firstName": "Celeste",
     "lastName": "Zapiola",
     "userName": "CelesZapio",
-    "email": "ceiizapiola@gmail.com",
-    "password": "Celeslanumber1",
+    "userEmail": "ceiizapiola@gmail.com",
+    "userPassword": "Celeslanumber1",
     "profileImage": "",
     "role": "Admin"
   },
@@ -14,8 +14,8 @@
     "firstName": "Camila",
     "lastName": "paez",
     "userName": "CamiBelloo",
-    "email": "camibelloni@gmail.com",
-    "password": "Camifernetera88",
+    "userEmail": "camibelloni@gmail.com",
+    "userPassword": "Camifernetera88",
     "profileImage": "user1627572309111.jpeg",
     "role": "Admin"
   },
@@ -24,8 +24,8 @@
     "firstName": "Tomas",
     "lastName": "Brusca",
     "userName": "TomasitoBrussca",
-    "email": "tomasbrusca@gmail.com",
-    "password": "Ellocobrusca22",
+    "userEmail": "tomasbrusca@gmail.com",
+    "userPassword": "Ellocobrusca22",
     "profileImage": "",
     "role": "Customer"
   },
@@ -34,8 +34,8 @@
     "firstName": "Ary",
     "lastName": "Sills",
     "userName": "Arytosills",
-    "email": "ary.sills@gmail.com",
-    "password": "Aroldo1234",
+    "userEmail": "ary.sills@gmail.com",
+    "userPassword": "Aroldo1234",
     "profileImage": "",
     "role": "Admin"
   },
@@ -43,7 +43,7 @@
     "userName": "Juan Perez",
     "userEmail": "juan.perez@gmial.com",
     "userPassword": "JuanP2021",
-    "rememberm-me": "rememberMe",
+    "rememberMe": "rememberMe",
     "id": 5
   },
   {
@@ -87,5 +87,12 @@
     "userEmail": "oscar@gmail.com",
     "userPassword": "$2a$10$degHnyICTzl6cUHn8Jzx3.nDqXjtDzR8lThG4QXIawfUVgPDw6.qK",
     "id": 12
+  },
+  {
+    "userName": "Tito",
+    "userEmail": "tito_laliga@gmail.com",
+    "userPassword": "$2a$10$yRm5GxSbF59RHIUsgLgyruqaZ28yf.yAIzKu3tzN0uOOJYYRU1KZq",
+    "rememberMe": "rememberMe",
+    "id": 13
   }
 ]
