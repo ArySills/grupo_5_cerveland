@@ -62,4 +62,25 @@ Ceremonias de weekly para planificar y controlar avances
 - Catarsis grupal
 - Interiorizar conceptos antes de escribir el codigo
 - Hacer un repaso de entendimiento de los pasos realizados para cumplir la consigna
-- Tener un plan B para reuniones
+- Tener un plan B para 
+
+
+RETRO SPRINT 5
+Continuar haciendo: 
+
+Comunicación fluida
+Revisión de dudas sobre los contenidos del curso
+Buena coordinación para asignar tareas
+Cumplimiento de las tareas asignadas
+Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
+Tener preparado tablero de retro y del próximo sprint para ahorrar tiempo
+Musicalizar reuniones
+Actualizar las tareas en Trello
+Mindfulness
+Catarsis grupal
+Interiorizar conceptos antes de escribir el codigo
+Hacer un repaso de entendimiento de los pasos realizados para cumplir la consigna
+Tener un plan B para reuniones
+Ordenar codigo con coments para mayor claridad
+Usar console log para probar cada funcionalidad
+
