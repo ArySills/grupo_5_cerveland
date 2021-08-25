@@ -61,11 +61,11 @@ CREATE TABLE `users` (
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
   `userName` varchar(50) NOT NULL,
-  `userEmail` varchar(20) NOT NULL,
-  `userPassword` varchar(15) NOT NULL,
+  `userEmail` varchar(30) NOT NULL,
+  `userPassword` varchar(30) NOT NULL,
   `profileImage` varchar(50) NOT NULL,
   `id_role` int(11) NOT NULL,
-  `rememberMe` tinyint(4) NOT NULL
+  `rememberMe` boolean NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
