@@ -7,6 +7,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+let db = require ("../database/models")
+
 
 const controlador = {
     detalle: (req, res)=>{
@@ -24,17 +26,41 @@ const controlador = {
         return res.render('products/productCreate')
     },
     guardar: (req, res) => { 
+		db.Products.create({
+			productName: req.body.productName,
+			productImage: req.body.productImage,
+			productDescription:req.body.productDescription,
+			productPrice: req.body.productPrice,
+			id_productCategory: req.body.productCategory
+		});
 
-        const lastProduct = products[products.length -1]; //Buscamos el último producto
-        const productToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
+		req.body.productCategory
+
+
+
+
+
+		res.send(req.body)
+
+		
+
+
+
+
+
+
+
+
+        //const lastProduct = products[products.length -1]; //Buscamos el último producto
+        //const productToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
         
-        productToCreate.id = lastProduct.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
+       // productToCreate.id = lastProduct.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
 
-        products.push(productToCreate); //Agregamos el nuevoproducto al array de productos
+        //products.push(productToCreate); //Agregamos el nuevoproducto al array de productos
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)); 
+        //fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)); 
 
-        res.redirect(303,'product')
+        //res.redirect(303,'product')
     },
     editar:  (req, res) => {
 
