@@ -36,22 +36,10 @@ const controlador = {
 
 		req.body.productCategory
 
-
-
-
-
 		res.send(req.body)
 
 		
-
-
-
-
-
-
-
-
-        //const lastProduct = products[products.length -1]; //Buscamos el último producto
+       //const lastProduct = products[products.length -1]; //Buscamos el último producto
         //const productToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
         
        // productToCreate.id = lastProduct.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
@@ -129,7 +117,6 @@ const controlador = {
 
 
 	},
-
 
 
 
