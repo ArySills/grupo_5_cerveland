@@ -23,7 +23,13 @@ const controlador = {
     return res.render('products/productDetail', viewData)
 	},
     agregar: (req, res) => { 
-        return res.render('products/productCreate')
+		db.ProductsCategories.findAll()
+		.then( function(categories){
+			res.render('products/productCreate', {categories: categories})
+		})
+		.catch( function(error){
+			console.log(error)
+		})
     },
     guardar: (req, res) => { 
 		db.Products.create({
@@ -34,9 +40,8 @@ const controlador = {
 			id_productCategory: req.body.productCategory
 		});
 
-		req.body.productCategory
 
-		res.send(req.body)
+		res.send('/product');
 
 		
        //const lastProduct = products[products.length -1]; //Buscamos el último producto

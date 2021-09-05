@@ -27,8 +27,14 @@
                     <div class="form-content">
                         <label>Categoría</label>
                         <br></br>
-                        <input class="input-product-category-create" type="radio" name="productCategory" value="1" required>Insumo
-                        <input class="input-product-category-create" type="radio" name="productCategory" value="2" required>Equipo
+                        <%for (let i =0, i < categories.length, i++){ %>
+                           
+                            <input class="input-product-category-create" type="radio" 
+                            name="productCategory" 
+                            value= "<%=categories[i].id%>" required> <%=categories[i].name%>
+
+                        <% } %>
+                        
                     </div>
 
                     <br></br>
