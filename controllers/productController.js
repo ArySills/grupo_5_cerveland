@@ -31,10 +31,10 @@ const controlador = {
 			productImage: req.body.productImage,
 			productDescription:req.body.productDescription,
 			productPrice: req.body.productPrice,
-			id_productCategory: req.body.productCategory
+			//id_productCategory: req.body.productCategory
 		});
 
-		req.body.productCategory
+		//req.body.productCategory
 
 
 
