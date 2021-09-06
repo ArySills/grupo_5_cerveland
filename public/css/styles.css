@@ -545,6 +545,13 @@ td input{
     margin-top: 0px;
 }
 
+.editar-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+}
+
 /*FOOTER*/
 
 .footer{

@@ -11,26 +11,16 @@ let db = require('../database/models')
 
 
 const controlador = {
-	detalle: (req, res) => {
+	productDetail: (req, res) => {
+
 		db.Products.findByPk(req.params.id, {
 			include: [{association: "productscategories"}]
 		})
 			.then(product => {
-				console.log(product)
 				res.render('products/productDetail', {product: product})
 			})
-	/*
-		const id = req.params.id;
-		const product = products.find((prod) => prod.id == id);
-
-		const viewData = {
-			product
-		}
-
-		return res.render('products/productDetail', viewData)
-		*/
 	},
-	agregar: (req, res) => {
+	createProduct: (req, res) => {
 		db.ProductCategories.findAll()
 			.then(function(categories) {
 				return res.render('products/productCreate', {categories: categories})
@@ -39,8 +29,9 @@ const controlador = {
 				console.log(error)
 			})
 	},
-	guardar: (req, res) => {
+	saveNewProduct: (req, res) => {
 		db.Products.create({
+
 			productName: req.body.productName,
 			productImage: req.body.productImage,
 			productDescription: req.body.productDescription,
@@ -52,36 +43,33 @@ const controlador = {
 			console.log(error)
 		})
 	},
-	editar: (req, res) => {
+	edit: (req, res) => {
+		let productRequest = db.Products.findByPk(req.params.id);
 
-		const id = req.params.id;
-		const product = products.find((prod) => prod.id == id);
-		if (!product) {
-			return res.send('El producto no existe')
-		}
-		const viewData = {
-			product
-		}
-		return res.render('products/productEdit', viewData)
+		let categoriesRequest = db.ProductCategories.findAll();
+		
+		Promise.all([productRequest, categoriesRequest])
+			.then(([product, categories]) => {
+				res.render('products/productEdit', {product: product, categories: categories})
+			})
 	},
-	guardarEdicion: (req, res) => {
+	saveEdition: (req, res) => {
+		db.Products.update({
 
-
-		// ENCONTRAR EL INDICE DEL PRODUCTO EN EL ARRAY
-		// EN BASE A SU ID
-		const indiceDelProducto = products.findIndex(producto => producto.id == req.params.id);
-
-		// products[indice encontrado] == producto en el array
-		products[indiceDelProducto] = { ...products[indiceDelProducto], ...req.body };
-
-		// GUARDAR LA NUEVA BASE DE DATOS
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-
-		//        PUSIMOS REDIRECCIONAR AL HOME, POR QUE CON 'PRODUCT' NOS TIRABA ERROR
-
-		res.redirect(303, '../product');
-
-
+			productName: req.body.productName,
+			productImage: req.body.productImage,
+			productDescription: req.body.productDescription,
+			productPrice: req.body.productPrice,
+			id_productCategory: req.body.productCategory
+		}, {
+			where: {
+				id: req.params.id
+			}
+		})
+		.then(res.redirect('/product/' + req.params.id))
+		.catch(function(error) {
+			console.log(error)
+		})
 	},
 	borrar: (req, res) => {
 
@@ -109,7 +97,7 @@ const controlador = {
 
 
 	},
-	listado: (req, res) => {
+	list: (req, res) => {
 		db.Products.findAll()
 			.then(function (products) {
 				res.render('products/productList',{products: products})

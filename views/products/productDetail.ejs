@@ -33,6 +33,16 @@
 
 <p><%= product.productDescription %></p>
 
+<div>
+    <a href="/product/<%=product.id%>/edit">
+        <button class="editar-button" type="submit">Editar</button>
+    </a>
+</div>
+
+<form action="/product/<%= product.id %>?_method=DELETE" method="POST">
+    <button class="editar-button" type="submit">Eliminar</button>
+</form>
+
 <hr class="divisoria">
 
 
