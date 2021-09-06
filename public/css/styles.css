@@ -555,9 +555,13 @@ td input{
 
 }
 
-
+.footer-padre{
+  
+}
 .sobrenos-texto{
-max-width: 250px;
+    max-width: 40%;
+    margin: auto;
+    text-align: center;
 }
 
 
@@ -577,10 +581,19 @@ max-width: 250px;
 }
 
 .buttons-footer{
+    margin: auto;
+}
+
+.sobrenos-iconos{
+    display: flex;
+    margin:auto;
     text-align: center;
+    align-content: center;
+    
 }
 
 .button-sobrenos{
+    margin: auto;
     font-size: 14px;
     border-radius: 10px;
     width: 120px;

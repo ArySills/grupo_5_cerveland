@@ -56,12 +56,6 @@ const controlador = {
 		}
 		return res.render('products/productEdit', viewData)
 	},
-
-
-
-
-
-
 	guardarEdicion: (req, res) => {
 
 
@@ -81,10 +75,6 @@ const controlador = {
 
 
 	},
-
-
-
-
 	borrar: (req, res) => {
 
 		// Buscar el producto con el id recibido por parametros en el array
@@ -111,16 +101,14 @@ const controlador = {
 
 
 	},
-
-
-
-	listado: async (req, res) => {
+	listado: (req, res) => {
 		db.Products.findAll()
 			.then(function (products) {
-				//res.send(products)
 				res.render('products/productList',{products: products})
 			})
-
+			.catch( function(errror) {
+				console.log(error);
+			})
 	}
 };
 

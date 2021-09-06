@@ -36,8 +36,6 @@ module.exports = (sequelize, DataTypes) => {
             {
                 as: 'productscategories',
                 foreignKey: 'id_productCategory'
-                
-
             }
             );
         }

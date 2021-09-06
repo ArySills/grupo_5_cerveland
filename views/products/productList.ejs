@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %>
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1>Listado de productos</h1>
+        <ul>
+            <% for (let i = 0; i < products.length; i++) { %>
+            <li>
+                <%=products[i].productName%> 
+            </li>
+            <% } %> 
+        </ul>
+    </main>
 
-
-    <body>
-        <%- include('../partials/header') %>
-            <main>
-                <div>
-                    <% for (let i=0; i < products.lenght; i++){ %>
-                        <div>
-                            <% products[i].productName %>
-                        </div>
-                        <% } %>
-                </div>
-            </main>
-            <%- include('../partials/footer') %>
-    </body>
-
-
-
+    <%- include('../partials/footer') %>
+</body>
 </html>
