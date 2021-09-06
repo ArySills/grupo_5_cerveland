@@ -71,7 +71,7 @@ const controlador = {
 			console.log(error)
 		})
 	},
-	borrar: (req, res) => {
+	delete: (req, res) => {
 		db.Products.destroy( {
 			where: {
 				id: req.params.id
