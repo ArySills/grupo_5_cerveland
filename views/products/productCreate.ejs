@@ -27,13 +27,16 @@
                     <div class="form-content">
                         <label>Categoría</label>
                         <br></br>
-                        <%for (let i =0, i < categories.length, i++){ %>
-                           
-                            <input class="input-product-category-create" type="radio" 
-                            name="productCategory" 
-                            value= "<%=categories[i].id%>" required> <%=categories[i].name%>
+                        <select name="productCategory">
 
-                        <% } %>
+                        
+                                <option  value= "1" required> 
+                                    Insumo
+                                </option>
+                               
+    
+                        </select>
+
                         
                     </div>
 
