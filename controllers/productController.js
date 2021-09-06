@@ -72,30 +72,12 @@ const controlador = {
 		})
 	},
 	borrar: (req, res) => {
-
-		// Buscar el producto con el id recibido por parametros en el array
-		// Eliminarlo
-		// Guardar el archivo .json con el nuevo contenido de products
-
-		// Filter
-
-
-		const nuevoArray = products.filter((product) => product.id != req.params.id);
-		// Todos los productos cuyo id sea diferente al enviado por parámetro
-
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArray, null, 2));
-
-
-		// session.mensaje = 'Producto creado';
-
-		// vista
-		// if(session.mensaje) 
-		// <p> <%= session.mensaje %> 
-		res.redirect(303, '../product') // Notice the 303 parameter
-
-
-
+		db.Products.destroy( {
+			where: {
+				id: req.params.id
+			}
+		})
+		.then(res.redirect('/product'))
 	},
 	list: (req, res) => {
 		db.Products.findAll()
