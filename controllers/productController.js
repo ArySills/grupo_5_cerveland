@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-let db = require("../database/models")
+let db = require('../database/models')
 
 
 const controlador = {
@@ -23,9 +23,9 @@ const controlador = {
 		return res.render('products/productDetail', viewData)
 	},
 	agregar: (req, res) => {
-		db.ProductsCategories.findAll()
-			.then(function (categories) {
-				res.render('products/productCreate', { categories: categories })
+		db.ProductCategories.findAll()
+			.then(function(categories) {
+				return res.render('products/productCreate', {categories: categories})
 			})
 			.catch(function (error) {
 				console.log(error)
@@ -38,22 +38,11 @@ const controlador = {
 			productDescription: req.body.productDescription,
 			productPrice: req.body.productPrice,
 			id_productCategory: req.body.productCategory
-		});
-
-
-		res.redirect('/product');
-
-
-		//const lastProduct = products[products.length -1]; //Buscamos el último producto
-		//const productToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
-
-		// productToCreate.id = lastProduct.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
-
-		//products.push(productToCreate); //Agregamos el nuevoproducto al array de productos
-
-		//fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2)); 
-
-		//res.redirect(303,'product')
+		})
+		.then(res.redirect('/product'))
+		.catch(function(error) {
+			console.log(error)
+		})
 	},
 	editar: (req, res) => {
 

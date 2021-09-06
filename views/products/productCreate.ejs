@@ -18,7 +18,7 @@
                     <br></br>
                     
                     <div>
-                        <input class="input-product-image-create" type="file" name="productImagen">
+                        <input class="input-product-image-create" type="file" name="productImage">
                     </div>
                     
 
@@ -29,11 +29,12 @@
                         <br></br>
                         <select name="productCategory">
 
-                        
-                                <option  value= "1" required> 
-                                    Insumo
+                        <% for (let i = 0; i < categories.length; i ++) { %>
+
+                                <option  value="<%=categories[i].id%>"> 
+                                    <%=categories[i].name%>
                                 </option>
-                               
+                        <% } %>
     
                         </select>
 
@@ -45,7 +46,7 @@
                     <div class="form-content">
                         <Label>Precio</Label>
                         <br></br>
-                        <input class="form-inputs" name="productPrice" value="0" type="number" placeholder="1.0" step="0.01" min="0" max="10"  required>
+                        <input class="form-inputs" name="productPrice" value="0" type="number" placeholder="1.0" step="0.01" min="0" max="10000"  required>
                     </div>
 
                     <br></br>

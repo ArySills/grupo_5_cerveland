@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'UsersRole';
+    let alias = 'ProductCategories';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -15,20 +15,21 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'usersrole',
+        tableName: 'productscategories',
         timestamps: false
     };
-    const UserRole = sequelize.define(alias, cols, config);
+    const ProductCategory = sequelize.define(alias, cols, config);
 
-    UserRole.associate = function (models) {
+    ProductCategory.associate = function (models) {
 
-        UserRole.hasMany(models.Users,
+        ProductCategory.hasMany(models.Products,
             {
-                foreignKey: 'id_role',
-                as: 'users'
+                as: 'products',
+                foreignKey: 'id_productCategory'
+                
             }
         );
     }
 
-    return UserRole
+    return ProductCategory
     }
