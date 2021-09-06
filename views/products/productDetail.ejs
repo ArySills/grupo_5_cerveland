@@ -7,14 +7,12 @@
 <main class="product-detail">
     <h2 class="detail-title"><%= product.productName %></h2>
 <div>
-    <img src="/images/<%= product.productImagen %>" class="foto-ampliada">
+    <img src="/images/<%=product.productImage%>" class="foto-ampliada">
 </div>
 
 <div>       
-
-<h2><%= product.packaging %></h2> 
     
-<h2>$<%= product.productPrice %></h2>
+<h2>$<%=product.productPrice%></h2>
 
 <div class="caja-cantidad">
     <div>

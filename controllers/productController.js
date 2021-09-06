@@ -12,7 +12,14 @@ let db = require('../database/models')
 
 const controlador = {
 	detalle: (req, res) => {
-
+		db.Products.findByPk(req.params.id, {
+			include: [{association: "productscategories"}]
+		})
+			.then(product => {
+				console.log(product)
+				res.render('products/productDetail', {product: product})
+			})
+	/*
 		const id = req.params.id;
 		const product = products.find((prod) => prod.id == id);
 
@@ -21,6 +28,7 @@ const controlador = {
 		}
 
 		return res.render('products/productDetail', viewData)
+		*/
 	},
 	agregar: (req, res) => {
 		db.ProductCategories.findAll()

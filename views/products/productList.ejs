@@ -8,7 +8,7 @@
         <ul>
             <% for (let i = 0; i < products.length; i++) { %>
             <li>
-                <%=products[i].productName%> 
+                <a href="/product/<%=products[i].id%>"><%=products[i].productName%> </a>
             </li>
             <% } %> 
         </ul>
