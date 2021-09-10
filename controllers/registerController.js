@@ -9,22 +9,33 @@ const bcryptjs = require ('bcryptjs');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {validationResult} = require ('express-validator')
 
+let db = require('../database/models')
+
 const controlador = {
     detalle: (req, res)=>{res.render('users/register')},
     create: (req, res) => { 
-        let errors = validationResult(req);
-     
-        const lastUser = users[users.length -1]; //Buscamos el último usuario
-        const userToCreate = {
-            ...req.body,
-            userPassword: bcryptjs.hashSync(req.body.userPassword,10)} //Guardamos el usuario con todos sus atributos q se cargaron en el form, en una variable
+       /*
+        let customerId = db.UserRoles.findAll({
+            where: {
+                id: 2
+            }
+        })
+        console.log("Id customer:" + customerId)
+        */
+
+        db.Users.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            userEmail: req.body.userEmail,
+            userPassword: req.body.userPassword,
+            profileImage: req.body.profileImage,
+            id_role: '2'
+		})
+		.then(res.redirect('/'))
+		.catch(function(error) {
+			console.log(error)
+		})
         
-        userToCreate.id = lastUser.id + 1; // Agregamos un id consecutivo ascendente al nuevo usuario
-
-        users.push(userToCreate); //Agregamos el nuevo usuario al array de usuarios
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2)); 
-
-        res.redirect(303,'/')
 }}
 module.exports = controlador;
