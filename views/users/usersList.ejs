@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1>Listado de usuarios</h1>
+        <ul>
+            <% for (let i = 0; i < users.length; i++) { %>
+            <li>
+                <a href="/user/<%=users[i].id%>"><%=users[i].userName%> </a>
+            </li>
+            <% } %> 
+        </ul>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

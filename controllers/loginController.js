@@ -10,6 +10,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 let db = require('../database/models')
 
+
 const controlador = {
     login: (req, res) => {
 
@@ -18,22 +19,17 @@ const controlador = {
 
         if (errors.isEmpty()) {
 
-            db.Users.findAll({
+            db.Users.findOne({
                 where: {
                   userEmail: req.body.userEmail
                 }
               })
             .then( user => {
-                console.log("Usuario de la base:" + {user: user})
 
-                console.log("Contrasena del body:" + req.body.userPassword )
-                console.log("Contrasena de la base:" + user.userPassword )
-
-
-                if (req.body.userPassword == user.userPassword) {
+                if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) {
                     userLogged = user;
-                    console.log( "Usuario luego dela congtraseña:" + userLogged);
                 }
+
                 else {
                     userLogged = undefined;
                 }
@@ -43,6 +39,7 @@ const controlador = {
                 } 
                 else {
                     req.session.usuarioLogueado = userLogged
+                    console.log('Usuario logueado:',  userLogged)
                     return res.redirect(303, '/')
                 }
             })
@@ -52,48 +49,6 @@ const controlador = {
         else { res.render('users/register', { errors: errors.errors }) }
 
     }
-
-        /*
-
-        let errors = validationResult(req);
-        let userLogged = '';
-
-        if (errors.isEmpty()) {
-
-            console.log("No hay errores");
-
-            let userToLogIn = db.Users.findAll({
-                where: {
-                  userEmail: req.body.userEmail
-                }
-              })
-            console.log("Email del usuario:" + userToLogIn)
-
-            if (bcryptjs.compareSync(req.body.userPassword, userToLogIn.userPassword)) {
-                userLogged = userToLogIn;
-                console.log(userLogged);
-            }
-
-            if(req.body.userPassword, userToLogIn.userPassword) {
-                userLogged = userToLogIn;
-                console.log(userLogged);
-            }
-
-            else userLogged = undefined;
-
-            if (userLogged == undefined) {
-                console.log(userLogged);
-                return res.render('users/register', { errors: [{ msg: 'Credenciales invalidas' }] })
-            } else {
-                req.session.usuarioLogueado = userLogged
-                return res.redirect(303, '/')
-            }
-        }
-
-        else { res.render('users/register', { errors: errors.errors }) }
-    }
-    */
-        
 }
 
 

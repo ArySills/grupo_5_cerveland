@@ -14,25 +14,21 @@ let db = require('../database/models')
 const controlador = {
     detalle: (req, res)=>{res.render('users/register')},
     create: (req, res) => { 
-       /*
-        let customerId = db.UserRoles.findAll({
-            where: {
-                id: 2
-            }
-        })
-        console.log("Id customer:" + customerId)
-        */
+        let cryptedPass = bcryptjs.hashSync(req.body.userPassword, 10)
 
         db.Users.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             userName: req.body.userName,
             userEmail: req.body.userEmail,
-            userPassword: req.body.userPassword,
+            userPassword: cryptedPass,
             profileImage: req.body.profileImage,
             id_role: '2'
 		})
-		.then(res.redirect('/'))
+		.then( user => {
+            req.session.usuarioLogueado = user
+            res.redirect('/')
+        })
 		.catch(function(error) {
 			console.log(error)
 		})

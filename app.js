@@ -30,7 +30,7 @@ app.use('/cart', rutaCarrito);
 
 app.use('/register', rutaRegister);
 
-app.use('/myProfile', userRoute);
+app.use('/user', userRoute);
 
 app.use('/login', userLogin);
 

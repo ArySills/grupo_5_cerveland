@@ -1,6 +1,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -9,14 +10,22 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 
+    list: (req, res) => {
+        db.Users.findAll()
+        .then(function (users) {
+            res.render('users/usersList',{users: users})
+        })
+        .catch( function(errror) {
+            console.log(error);
+        })
+    },
     detail: (req, res)=>{
-    const id = req.params.id;
-    const user = users.find((us) => us.id == id);
 
-    const viewData = {
-        user
-    }
-    return res.render('users/myProfile', viewData)
+    db.Users.findByPk(req.params.id)
+    .then( user => {
+        return res.render('users/myProfile', {user: user})
+    }) 
+
     },
     guardar: (req, res) => { 
 
@@ -31,26 +40,23 @@ const controller = {
 
         res.redirect(303,'/')
     },
-    save: (req, res) => {         
-        // ENCONTRAR EL INDICE DEL USUARIO EN EL ARRAY
-        // EN BASE A SU ID
-        const indiceDelUsuario = users.findIndex( user => user.id == req.params.id);
+    save: (req, res) => {  
+        db.Users.update({
 
-        // users[indice encontrado] == usuario en el array
-        const nuevosDatos = {
-            ...req.body,
-            profileImage: req.file.filename
-        }
-        users[indiceDelUsuario] = { ...users[indiceDelUsuario] , ...nuevosDatos };
-
-        
-        // GUARDAR LA NUEVA BASE DE DATOS
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-
-        // REDIRECCIONAR AL HOME
-   //return res.send (req.body);
-    res.redirect(303,'/');
-
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            profileImage: req.body.profileImage
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect('/user'))
+        .catch(function(error) {
+            console.log(error)
+        })
+            
 
     },
 };

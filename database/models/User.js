@@ -20,10 +20,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(30)
         },
         userPassword: {
-            type: dataTypes.STRING(30)
+            type: dataTypes.STRING(100)
         },
         profileImage: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(100)
         },
         id_role: {
             type: dataTypes.INTEGER
