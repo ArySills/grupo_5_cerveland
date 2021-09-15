@@ -84,3 +84,35 @@ Tener un plan B para reuniones
 Ordenar codigo con coments para mayor claridad
 Usar console log para probar cada funcionalidad
 
+
+RETRO SPRINT 6
+Continuar haciendo: 
+- Ceremonias de weekly para planificar y controlar avances
+- Comunicación fluida
+- Revisión de dudas sobre los contenidos del curso
+- Buena coordinación para asignar tareas
+- Cumplimiento de las tareas asignadas
+- Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
+- Tener preparado tablero de retro y del próximo sprint para ahorrar tiempo
+- Musicalizar reuniones
+- Actualizar las tareas en Trello
+Empezar a hacer:
+- Repasar los temas a desarrollar previo a las reuniones grupales
+
+RETRO SPRINT 7
+Continuar haciendo: 
+
+Comunicación fluida
+Revisión de dudas sobre los contenidos del curso
+Buena coordinación para asignar tareas
+Cumplimiento de las tareas asignadas
+Informarnos la actualizacion de status del proyecto cuando alguno no puede asistir a una reunión
+Tener preparado tablero de retro y del próximo sprint para ahorrar tiempo
+Actualizar las tareas en Trello
+Usar console log para probar cada funcionalidad
+
+
+Empezar a hacer: 
+Musicalizar reuniones
+Hacer un repaso de entendimiento de los pasos realizados para cumplir la consigna
+Borrar codigo que no se esté utilizando
