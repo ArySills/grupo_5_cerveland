@@ -55,12 +55,12 @@
                 <h2 class="h2Login">Registrate !</h2>
                 
                 <div>
-                    <div class="form-content">
-                        <input class="input-product-name-create" type="text" name="firstName" value=""  placeholder="Nombre" required>
+                    <div class="form-content-firstName">
+                        <input class="input-product-name-create" type="text" name="firstName" value=""  placeholder="Nombre">
                     </div>
 
                     <div class="form-content">
-                        <input class="input-product-name-create" type="text" name="lastName" value="" placeholder="Apellido" required>
+                        <input class="input-product-name-create" type="text" name="lastName" value="" placeholder="Apellido">
 
                     <div class="form-content">
                         <i class="fas fa-user"></i>
@@ -80,6 +80,14 @@
                         <i class="fas fa-lock"></i>
                         <input class="form-inputs" type="password" name="userPassword" placeholder="Password">
                     </div>
+                    <div class="errors">
+                        <ul>
+                                
+                        </ul>
+                    </div>
+
+
+
 
                     <div class="buttons">
                         <button  class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Sign Up</button>
@@ -90,5 +98,10 @@
     
 </main>
     <%- include('../partials/footer') %>
+
+    <script src = "../../public/js/register.js">
+    
+    </script>
+
 </body>
 </html>

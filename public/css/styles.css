@@ -231,6 +231,18 @@ font-weight: bold;
     align-items: center;
     padding-left: 20%;
 }
+.form-container-inicioSesion {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20%;
+}
+
+
+
+
+
 
 .form-inputs {
     margin-bottom: 20px;
@@ -645,4 +657,14 @@ td input{
 }
 .suscribite-titulo{
     margin-bottom: 0px;
+}
+
+
+.errors{
+    color: red
+}
+
+.form-content-firstName {
+    height: auto;
+    border-radius: 2px;
 }
