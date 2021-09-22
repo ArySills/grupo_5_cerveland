@@ -28,14 +28,19 @@ const controlador = {
 
                 if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) {
                     userLogged = user;
+                    console.log('logueadoo')
+                    
+                    
                 }
 
                 else {
                     userLogged = undefined;
+                   
                 }
 
                 if (userLogged == undefined) {
                     return res.render('users/register', { errors: [{ msg: 'Credenciales invalidas' }] })
+                    
                 } 
                 else {
                     req.session.usuarioLogueado = userLogged

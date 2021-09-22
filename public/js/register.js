@@ -1,9 +1,12 @@
-window.addEventListener('load', function()
-{ 
-let form = document.querySelector('form.form-container')
+ window.addEventListener("load", function(){
 
-form.addEventListener('submit', function(e){
+let form = document.querySelector("form.form-container")
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    
+    /*
     let errors = [];
 
     let firstName = document.querySelector("input.form-container-firstName")
@@ -18,7 +21,7 @@ form.addEventListener('submit', function(e){
         for (let i=0; i < errors.length; i++){
             ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
         }
-    }
+    } */
 })
 }
 )
