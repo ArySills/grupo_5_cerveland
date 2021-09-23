@@ -1,110 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
-<body class="bodyLogin">
-    <%- include('../partials/header') %>
-<main>
- 
-        <div class="formulario">
-    
-            <% if (typeof errors !== 'undefined')
-            { %> 
-                <ul>
-                    <% for (let i = 0; i < errors.length; i++) { %>
-                        <li> <%= errors[i].msg%>
-                        </li> 
-                        <% } %>
-                    </ul>
-    
-            <% } %>
-    
-            <form  action="/login" method="POST" class="form-container-inicioSesion">
-                <h2 class="h2Login">Inicia sesión !</h2>
-                
-                <div>
-                    <div class="form-content">
-                        <i class="fas fa-user"></i>
-                        <input class="form-inputs" id="userName" type="text" name="userName" placeholder="User name">
-                    </div>
-            
-                    <div class="form-content">
-                        <i class="fas fa-envelope"></i>
-                        <input class="form-inputs" id="userEmail" type="email" name="userEmail" placeholder="E-mail">
-                    </div>
-            
-                    <div class="form-content">
-                        <i class="fas fa-lock"></i>
-                        <input class="form-inputs" id="userPassword" type="password" name="userPassword" placeholder="Password">
-                    </div>
-                    <div class="remember-me">
-                        <input type="checkbox" name="rememberMe" value="rememberMe" id="rememberMe">
-                        <label for="remember-me"> Recordar cuenta</label>
-                    </div>
-    
-                    <div class="forgot-pass"><a href="#">Olvidó su contraseña?</a></div>
-    
-                    <div class="buttons">
-                        <button  class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Login</button>
-                    </div>
-            </form>
-        </div>             
+<%- include('../partials/head') %>
 
+    <body class="bodyLogin">
+        <%- include('../partials/header') %>
+            <main>
 
-        <div class="formulario">
-            <form  action="/register" method="POST" class="form-container">
-                <h2 class="h2Login">Registrate !</h2>
-                
-                <div>
-                    <div class="form-content-firstName">
-                        <input class="input-product-name-create" id="firstName" type="text" name="firstName" value=""  placeholder="Nombre">
-                    </div>
+                <div class="formulario">
 
-                    <div class="form-content">
-                        <input class="input-product-name-create" id="lastName" type="text" name="lastName" value="" placeholder="Apellido">
-
-                    <div class="form-content">
-                        <i class="fas fa-user"></i>
-                        <input class="form-inputs" id="userName" type="text" name="userName" placeholder="User name">
-                    </div>
-
-                    <div class="form-content">
-                        <input class="input-product-image-create" id="profileImage" type="file" name="profileImage" value="">
-                    </div>
-            
-                    <div class="form-content">
-                        <i class="fas fa-envelope"></i>
-                        <input class="form-inputs" id="userEmail" type="email" name="userEmail" placeholder="E-mail">
-                    </div>
-            
-                    <div class="form-content">
-                        <i class="fas fa-lock"></i>
-                        <input class="form-inputs" id="userPassword" type="password" name="userPassword" placeholder="Password">
-                    </div>
-                    <div class="errors">
+                    <% if (typeof errors !=='undefined' ) { %>
                         <ul>
-                                
+                            <% for (let i=0; i < errors.length; i++) { %>
+                                <li>
+                                    <%= errors[i].msg%>
+                                </li>
+                                <% } %>
                         </ul>
-                    </div>
+
+                        <% } %>
+
+                            <form action="/login" method="POST" class="form-container-inicioSesion">
+                                <h2 class="h2Login">Inicia sesión !</h2>
+
+                                <div>
+                                    <div class="form-content">
+                                        <i class="fas fa-user"></i>
+                                        <input class="form-inputs" id="userNameLogin" type="text" name="userName"
+                                            placeholder="User name">
+                                    </div>
+
+                                    <div class="form-content">
+                                        <i class="fas fa-envelope"></i>
+                                        <input class="form-inputs" id="userEmailLogin" type="email"  name="userEmail"
+                                            placeholder="E-mail">
+                                    </div>
+
+                                    <div class="form-content">
+                                        <i class="fas fa-lock"></i>
+                                        <input class="form-inputs" id="userPasswordLogin" type="password" name="userPassword"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="remember-me">
+                                        <input type="checkbox" name="rememberMe" value="rememberMe" id="rememberMe">
+                                        <label for="remember-me"> Recordar cuenta</label>
+                                    </div>
+
+                                    <div class="forgot-pass"><a href="#">Olvidó su contraseña?</a></div>
+
+                                    <div class="errors">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="login-button" type="submit"> <i
+                                                class="fas fa-arrow-right"></i>Login</button>
+                                    </div>
+                            </form>
+                </div>
+
+
+                <div class="formulario">
+                    <form action="/register" method="POST" class="form-container">
+                        <h2 class="h2Login">Registrate !</h2>
+
+                        <div>
+                            <div class="form-content-firstName">
+                                <input class="input-product-name-create" id="firstName" type="text" name="firstName"
+                                    value="" placeholder="Nombre">
+                            </div>
+
+                            <div class="form-content">
+                                <input class="input-product-name-create" id="lastName" type="text" name="lastName"
+                                    value="" placeholder="Apellido">
+
+                                <div class="form-content">
+                                    <i class="fas fa-user"></i>
+                                    <input class="form-inputs" id="userName" type="text" name="userName"
+                                        placeholder="User name">
+                                </div>
+
+                                <div class="form-content">
+                                    <input class="input-product-image-create" id="profileImage" type="file"
+                                        name="profileImage" value="">
+                                </div>
+
+                                <div class="form-content">
+                                    <i class="fas fa-envelope"></i>
+                                    <input class="form-inputs" id="userEmail" type="email" name="userEmail"
+                                        placeholder="E-mail">
+                                </div>
+
+                                <div class="form-content">
+                                    <i class="fas fa-lock"></i>
+                                    <input class="form-inputs" id="userPassword" type="password" name="userPassword"
+                                        placeholder="Password">
+                                </div>
+                                <div class="errors">
+                                    <ul>
+
+                                    </ul>
+                                </div>
 
 
 
 
-                    <div class="buttons">
-                        <button  class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Sign Up</button>
-                    </div>
-            </form>         
-        </div>            
+                                <div class="buttons">
+                                    <button class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Sign
+                                        Up</button>
+                                </div>
+                    </form>
+                </div>
 
-    
-</main>
-    <%- include('../partials/footer') %>
 
-    <script src = "/js/register.js "> </script>
-    
-    
+            </main>
+            <%- include('../partials/footer') %>
 
-</body>
+                <script src="/js/register.js "> </script>
+                <script src="/js/login.js "> </script>
+
+
+
+    </body>
 
 </html>
-
- 
