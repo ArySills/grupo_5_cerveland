@@ -12,13 +12,13 @@
             <form  action="/product" method="POST" class="form-container-create-product">
                 <div>
                     <div class="form-content">
-                        <input class="input-product-name-create" type="text" name="productName" placeholder="Nombre producto" required>
+                        <input class="input-product-name-create" id="productName" type="text" name="productName" placeholder="Nombre producto">
                     </div>
 
                     <br></br>
                     
                     <div>
-                        <input class="input-product-image-create" type="file" name="productImage">
+                        <input class="input-product-image-create" id="productImage" type="file" name="productImage">
                     </div>
                     
 
@@ -54,10 +54,16 @@
                     <div class="form-content">
                         <Label>Descripción </Label>
                         <br></br>
-                        <textarea class="textarea-product-description-create" name="productDescription" placeholder="Agregue una descripción" required>
+                        <textarea class="textarea-product-description-create" id="productDescription" name="productDescription" placeholder="Agregue una descripción" required>
                         </textarea>
                     </div>
-            
+
+                    <div class="errors">
+                        <ul>
+
+                        </ul>
+                    </div>
+                    
 
                     <div class="buttons">
                         <button  class="login-button" type="submit">Agregar</button>
@@ -73,5 +79,8 @@
     </main>
 
     <%- include('../partials/footer') %>
+
+    <script src="/js/productCreate.js "> </script>
+
 </body>
 </html>

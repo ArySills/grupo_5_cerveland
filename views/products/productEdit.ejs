@@ -12,13 +12,13 @@
             <form  action="/product/<%=product.id%>?_method=PUT" method="POST" class="form-container-create-product">
                 <div>
                     <div class="form-content">
-                        <input class="input-product-name-create" type="text" value="<%= product.productName %>" name="productName" required>
+                        <input class="input-product-name-create" id="productName" type="text" value="<%= product.productName %>" name="productName">
                     </div>
 
                     <br></br>
                     
                     <div>
-                        <input class="input-product-image-create" type="file" value="<%=product.productimage%>" name="productImagen">
+                        <input class="input-product-image-create" id="productImage" type="file" value="<%=product.productimage%>" name="productImage">
                     </div>
                     
 
@@ -57,8 +57,13 @@
                     <div class="form-content">
                         <Label>Descripción </Label>
                         <br></br>
-                        <input class="textarea-product-description-create" value="<%= product.productDescription %>" name="productDescription" placeholder="Agregue una descripción" required>
+                        <input class="textarea-product-description-create" value="<%= product.productDescription %>" id="productDescription" name="productDescription" placeholder="Agregue una descripción" required>
                         
+                    </div>
+                    <div class="errors">
+                        <ul>
+
+                        </ul>
                     </div>
             
 
@@ -77,5 +82,8 @@
     </main>
 
     <%- include('../partials/footer') %>
+
+    <script src="/js/productEdit.js "> </script>
+
 </body>
 </html>
