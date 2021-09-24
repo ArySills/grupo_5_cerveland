@@ -30,13 +30,13 @@ ulErrors.innerHTML = "";
         for (let i=0; i < errors.length; i++){
             ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
         }
-    } /*
+    } 
     //email
     if(userEmail.value.trim() == ''){
         errors.push('El campo email es obligatorio');
     }else if (!expresion1.test(userEmail)){
         errors.push('Debes ingresar un email válido');
-    }*/
+    }
       //password
       if(userPassword.value.trim() == ''){
         errors.push('La contraseña es obligatoria');
