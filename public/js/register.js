@@ -15,7 +15,7 @@ ulErrors.innerHTML = "";
     let expresion1 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}$/;
     let userPassword = document.querySelector("#userPassword");
     let profileImage = document.querySelector("#profileImage");
-    let expresion2= /\.(jpg|png|gif)$/i;
+    let expresion2= /\.(jpg|png|gif)$/i; 
     let entrar = false;
 
 
@@ -73,9 +73,8 @@ ulErrors.innerHTML = "";
         }
     } 
       //imagen
-
-      if (!expresion2.test(profileImage.name)){
-        errors.push('El archivo a adjuntar no es una imagen');
+      if (!expresion2.test(profileImage.value)=== false){
+        errors.push('El formato del archivo no es válido');
       }else {
         alert('Imagen cargada')                
     }
