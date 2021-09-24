@@ -19,6 +19,7 @@ ulErrors.innerHTML = "";
     let entrar = false;
 
 
+
    //nombre y apellido 
     if(firstName.value.trim() == '' || lastName.value.trim() == ''){
         errors.push('Los campos nombre y apellido son obligatorios');
