@@ -14,8 +14,10 @@ let db = require('../database/models')
 const controlador = {
     detalle: (req, res)=>{res.render('users/register')},
     create: (req, res) => { 
-        let cryptedPass = bcryptjs.hashSync(req.body.userPassword, 10)
 
+        let cryptedPass = bcryptjs.hashSync(req.body.userPassword, 10)
+        const resultValidation = validationResult(req); // Esta funcion devuelve un objeto literal "errors" que tiene un array de errores.
+        
         db.Users.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -26,6 +28,12 @@ const controlador = {
             id_role: '2'
 		})
 		.then( user => {
+
+            if(resultValidation.errors.length > 0) {
+                return res.render('users/register', {
+                    errors: resultValidation.mapped()
+                });
+            }
             req.session.usuarioLogueado = user
             res.redirect('/')
         })
