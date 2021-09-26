@@ -1,5 +1,5 @@
 let errors = [];
-let ulErrors = document.querySelector('div.errors ul');     
+let ulErrors = document.querySelector('div.errorsRegister ul');     
 ulErrors.innerHTML = "";
 
 window.addEventListener("load", function(){
@@ -88,6 +88,4 @@ validarExt(false);
         
     return false;
     }
-    else{
-        alert ("Imagen cargada")
-    }}
+}
