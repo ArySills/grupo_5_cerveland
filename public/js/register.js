@@ -1,22 +1,26 @@
- window.addEventListener("load", function(){
-
-let form = document.querySelector("form.form-container")
-
-form.addEventListener("submit", (e) => {
+let errors = [];
 let ulErrors = document.querySelector('div.errors ul');     
 ulErrors.innerHTML = "";
 
-    let errors = [];
+window.addEventListener("load", function(){
 
+let form = document.querySelector("form.form-container")
+   
+form.addEventListener("submit", (e) => {
+    ulErrors.innerHTML = "";
+errors = [];
+validarExt(false);
+    console.log (errors);
     let firstName = document.querySelector("#firstName");
     let lastName = document.querySelector("#lastName");
     let userName = document.querySelector("#userName");
     let userEmail = document.querySelector("#userEmail");
     let expresion1 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}$/;
     let userPassword = document.querySelector("#userPassword");
-    let profileImage = document.querySelector("#profileImage");
-    let expresion2= /\.(jpg|png|gif)$/i; 
+    //let profileImage = document.querySelector("#profileImage");
+    //let expresion2= /\.(jpg|png|gif)$/i; 
     let entrar = false;
+
 
 
 
@@ -29,9 +33,7 @@ ulErrors.innerHTML = "";
     if(errors.length > 0){
         e.preventDefault();
 
-        for (let i=0; i < errors.length; i++){
-            ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-        }
+    
     } 
     //usuario
     if(userName.value.trim() == ''){
@@ -42,9 +44,7 @@ ulErrors.innerHTML = "";
     if(errors.length > 0){
         e.preventDefault();
 
-        for (let i=0; i < errors.length; i++){
-            ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-        }
+    
     } 
     //email
     if(userEmail.value.trim() == ''){
@@ -56,9 +56,7 @@ ulErrors.innerHTML = "";
         if(errors.length > 0){
             e.preventDefault();
     
-            for (let i=0; i < errors.length; i++){
-                ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-            }
+
         }
       //password
       if(userPassword.value.trim() == ''){
@@ -73,12 +71,23 @@ ulErrors.innerHTML = "";
             ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
         }
     } 
-      //imagen
-      if (!expresion2.test(profileImage.value)=== false){
-        errors.push('El formato del archivo no es válido');
-      }else {
-        alert('Imagen cargada')                
+   
+ })
+ })
+ //imagen
+ function validarExt(showErrors= true){            
+    let profileImage = document.querySelector("#profileImage");
+    let extPermitidas = /\.(jpg|png|gif)$/i;      
+    let archivoRuta = profileImage.value;
+
+    if (!extPermitidas.exec(archivoRuta)){
+        errors.push("El formato subido no está permitido");
+        if (showErrors) {
+            ulErrors.innerHTML += "<li>" + errors[0] + "</li>"; 
+        }
+        
+    return false;
     }
-}) 
-}
-)
+    else{
+        alert ("Imagen cargada")
+    }}
