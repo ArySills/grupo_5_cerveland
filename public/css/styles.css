@@ -664,6 +664,11 @@ td input{
     color: red
 }
 
+.text-danger {
+    color: red;
+    padding: 1px;
+}
+
 .form-content-firstName {
     height: auto;
     border-radius: 2px;

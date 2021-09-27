@@ -62,41 +62,78 @@
 
 
                 <div class="formulario">
-                    <form action="/register" method="POST" class="form-container">
+                    <form action="/register" method="POST" enctype="multipart/form-data" class="form-container">
                         <h2 class="h2Login">Registrate !</h2>
+
 
                         <div>
                             <div class="form-content-firstName">
                                 <input class="input-product-name-create" id="firstName" type="text" name="firstName"
                                     value="" placeholder="Nombre">
+                                
+                                <% if(locals.errors && errors.firstName) { %>
+                                    <div class="text-danger">
+                                    <%=errors.firstName.msg%>
+                                    </div>
+
+                                <% } %>
                             </div>
 
                             <div class="form-content">
                                 <input class="input-product-name-create" id="lastName" type="text" name="lastName"
                                     value="" placeholder="Apellido">
+                                    <% if(locals.errors && errors.lastName) { %>
+                                        <div class="text-danger">
+                                        <%=errors.lastName.msg%>
+                                        </div>
+    
+                                    <% } %>
 
                                 <div class="form-content">
                                     <i class="fas fa-user"></i>
                                     <input class="form-inputs" id="userName" type="text" name="userName"
                                         placeholder="User name">
+                                    <% if(locals.errors && errors.userName) { %>
+                                         <div class="text-danger">
+                                            <%=errors.userName.msg%>
+                                        </div>
+                                    <% } %>
                                 </div>
 
                                 <div class="form-content">                            
                                     <input class="input-product-image-create" id="profileImage" type="file"
-                                        name="profileImage" value="" onchange="return validarExt()">
+                                        name="profileImage">
+
+                                    <% if(locals.errors && errors.profileImage) { %>
+                                        <div class="text-danger">
+                                               <%=errors.profileImage.msg%>
+                                        </div>
+                                    <% } %>
                                 </div>
 
                                 <div class="form-content">
                                     <i class="fas fa-envelope"></i>
                                     <input class="form-inputs" id="userEmail" type="email" name="userEmail"
                                         placeholder="E-mail">
+                                    <% if(locals.errors && errors.userEmail) { %>
+                                            <div class="text-danger">
+                                                   <%=errors.userEmail.msg%>
+                                            </div>
+                                    <% } %>
+                                    
                                 </div>
 
                                 <div class="form-content">
                                     <i class="fas fa-lock"></i>
                                     <input class="form-inputs" id="userPassword" type="password" name="userPassword"
                                         placeholder="Password">
+                                    <% if(locals.errors && errors.userPassword) { %>
+                                        <div class="text-danger">
+                                                <%=errors.userPassword.msg%>
+                                        </div>
+                                    <% } %>
                                 </div>
+
                                 <div class="errors">
                                     <ul>
 

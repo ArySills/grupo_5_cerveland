@@ -7,7 +7,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcryptjs = require ('bcryptjs');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {validationResult} = require ('express-validator')
+const {validationResult} = require ('express-validator');
 
 let db = require('../database/models')
 
@@ -16,30 +16,34 @@ const controlador = {
     create: (req, res) => { 
 
         let cryptedPass = bcryptjs.hashSync(req.body.userPassword, 10)
-        const resultValidation = validationResult(req); // Esta funcion devuelve un objeto literal "errors" que tiene un array de errores.
-        
-        db.Users.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            userName: req.body.userName,
-            userEmail: req.body.userEmail,
-            userPassword: cryptedPass,
-            profileImage: req.body.profileImage,
-            id_role: '2'
-		})
-		.then( user => {
+        const errors = validationResult(req); // Esta funcion devuelve un objeto literal "errors" que tiene un array de errores.
+      
+        // Antes de guardar el usuario debemos asegurarnos de que no tengamos ningun error de validacion
+        if(!errors.isEmpty()) {
 
-            if(resultValidation.errors.length > 0) {
-                return res.render('users/register', {
-                    errors: resultValidation.mapped()
-                });
-            }
-            req.session.usuarioLogueado = user
-            res.redirect('/')
-        })
-		.catch(function(error) {
-			console.log(error)
-		})
+             res.render('users/register', { // Si encuentra errores renderizamos la vista y le pasamos los errores para que se muestren.
+                errors: errors.mapped(),
+                oldData: req.body
+            });
+        } else {
+
+            db.Users.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                userName: req.body.userName,
+                userEmail: req.body.userEmail,
+                userPassword: cryptedPass,
+                profileImage: req.file.filename,
+                id_role: '2'
+            })
+            .then( user => {
+                req.session.usuarioLogueado = user
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+        }
         
 }}
 module.exports = controlador;

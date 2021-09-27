@@ -3,6 +3,22 @@ const router = express.Router();
 const registerController = require ('../controllers/registerController');
 const {check} = require ('express-validator');
 const multer = require ('multer');
+const path = require ('path');
+
+const storage = multer.diskStorage ({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../public/images/users'));
+    },
+    filename: (req, file, cb) => {
+        
+        const newFilename = 'user' + Date.now() + path.extname(file.originalname);
+
+        console.log(newFilename)
+        cb(null, newFilename);
+    }
+});
+
+const fileUpload = multer ({storage});
 
 const validations = [
     check('firstName').notEmpty().withMessage("Debes completar el campo Nombre").bail()
@@ -15,31 +31,24 @@ const validations = [
     check('userPassword').notEmpty().withMessage("Debes completar el campo contraseña").bail()
     .isLength({min: 8, max: 12}).withMessage('La contraseña debe tener al menos 8 caracteres'),
     check('profileImage').custom((value, {req}) => {
-        let file = req.file;
-        let acceptedExtentions = ['JPG', 'JPEG', 'PNG', 'GIF'];
 
-        if(file) {
-          let fileExtension = path.extname(file.originalname);
-          if (!acceptedExtentions.includes(fileExtension)){
-              throw new Error(`Las extensiones de archivo permitidas son: ${acceptedExtentions.join(', ')}`)
-          }
+        let file = req.file;
+
+        let acceptedExtentions = ['.jpg', '.jpeg', '.png', '.gif'];
+        
+        if(!file){
+            throw new Error('Tiene que subir una imagen');
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtentions.includes(fileExtension)){
+               
+                throw new Error(`Las extensiones de archivo permitidas son: ${acceptedExtentions.join(', ')}`)
+            }
         }
         return true;
     })
 ]
 
-const storage = multer.diskStorage ({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../public/images/users'));
-    },
-    filename: (req, file, cb) => {
-        
-        const newFilename = 'user' + Date.now() + path.extname(file.originalname);
-        cb(null, newFilename);
-    }
-});
-
-const fileUpload = multer ({storage});
 
 router.get('/',registerController.detalle);
 router.post('/',fileUpload.single('profileImage'), validations, registerController.create);
