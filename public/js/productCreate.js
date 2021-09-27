@@ -1,19 +1,19 @@
+let errors = [];
+let ulErrors = document.querySelector('div.errors ul');
+        ulErrors.innerHTML = "";
+
 window.addEventListener("load", function(){
 
 let form = document.querySelector("form.form-container-create-product")
 
 form.addEventListener("submit", (e) => {
-    
-
-    let ulErrors = document.querySelector('div.errors ul');     
     ulErrors.innerHTML = "";
-    
-        let errors = [];
+    errors = [];
+    validarExt(false);
 
         let productName = document.querySelector("#productName");
-        let productImage = document.querySelector("#productImage");
         let productDescription = document.querySelector("#productDescription");
-        let expresion2= /\.(jpg|jpeg|png|gif)$/i;
+
 
        
         //nombre producto
@@ -27,13 +27,8 @@ form.addEventListener("submit", (e) => {
     if(productDescription.value.trim().length < 20){
         errors.push('El campo descripción debe tener al menos 20 caracteres');
     }
-/*
-        //iamgen producto
-    if (!expresion2.test(productImage.name)){
-            errors.push('El archivo a adjuntar no es una imagen');
-                       
-    }        
-    */
+
+    
     if(errors.length > 0){
         e.preventDefault();
 
@@ -43,6 +38,22 @@ form.addEventListener("submit", (e) => {
     } 
 })
 })
+
+//imagen
+function validarExt(showErrors = true) {
+    let productImage = document.querySelector("#productImage");
+    let extPermitidas = /\.(jpg|png|gif)$/i;
+    let archivoRuta = productImage.value;
+
+    if (!extPermitidas.exec(archivoRuta)) {
+        errors.push("El formato subido no está permitido");
+        if (showErrors) {
+            ulErrors.innerHTML += "<li>" + errors[0] + "</li>";
+        }
+
+        return false;
+    }
+}
 
 
 
