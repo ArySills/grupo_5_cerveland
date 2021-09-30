@@ -33,11 +33,12 @@ const controlador = {
 	},
 	saveNewProduct: (req, res) => {
         let errors = validationResult(req);
+		
 		if(errors.isEmpty()) {
 			db.Products.create({
 
 				productName: req.body.productName,
-				productImage: req.body.productImage,
+				productImage: req.file.filename,
 				productDescription: req.body.productDescription,
 				productPrice: req.body.productPrice,
 				id_productCategory: req.body.productCategory
@@ -50,10 +51,11 @@ const controlador = {
 		} else {
 			db.ProductCategories.findAll()
 			.then(function(categories) {
-				console.log("CREACIONNNNN")
+				
 				return res.render('products/productCreate', { 
 					categories: categories,
-					errors: errors.errors }) 
+					errors: errors.mapped(),
+                	oldData: req.body }) 
 			
 			})
 			.catch(function (error) {
@@ -74,10 +76,14 @@ const controlador = {
 			})
 	},
 	saveEdition: (req, res) => {
+		let errors = validationResult(req);
+		
+		if(errors.isEmpty()) {
+		console.log('este es el body' + req.body.productName)
 		db.Products.update({
 
 			productName: req.body.productName,
-			productImage: req.body.productImage,
+			productImage: req.file.filename,
 			productDescription: req.body.productDescription,
 			productPrice: req.body.productPrice,
 			id_productCategory: req.body.productCategory
@@ -89,7 +95,18 @@ const controlador = {
 		.then(res.redirect('/product/' + req.params.id))
 		.catch(function(error) {
 			console.log(error)
-		})
+		}) 
+	} else {
+		let productRequest = db.Products.findByPk(req.params.id);
+
+		let categoriesRequest = db.ProductCategories.findAll();
+		
+		Promise.all([productRequest, categoriesRequest])
+			.then(([product, categories]) => {
+				res.render('products/productEdit', {product: product, categories: categories, errors: errors.mapped(), oldData: req.body})
+			})
+			
+	}
 	},
 	delete: (req, res) => {
 		db.Products.destroy( {

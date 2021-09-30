@@ -3,18 +3,33 @@ const router = express.Router();
 const productController = require ('../controllers/productController');
 const authMiddleware = require ('../middlewares/authMiddleware');
 const {check} = require ('express-validator');
+const path = require ('path');
+const multer = require ('multer');
 
+const storage = multer.diskStorage ({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../public/images/products'));
+    },
+    filename: (req, file, cb) => {
+        
+        const newFilename = 'product' + Date.now() + path.extname(file.originalname);
+
+        console.log(newFilename)
+        cb(null, newFilename);
+    }
+});
+
+const fileUpload = multer ({storage});
 
 const createValidations = [
     check('productName').notEmpty().withMessage("Debes completar el campo Nombre").bail()
     .isLength({min: 5, max: undefined}).withMessage("El nombre debe tener al menos 5 caracteres"),
     check('productDescription').notEmpty().withMessage("Debes completar el campo Descripcion").bail()
     .isLength({min: 20, max: undefined}).withMessage("La descripcion debe tener al menos 20 caracteres"),
-    check('productImage').notEmpty().withMessage("Debes completar el campo Descripcion"),
     check('productImage').custom((value, {req}) => {
 
         let file = req.file;
-
+        console.log(req.file);
         let acceptedExtentions = ['.jpg', '.jpeg', '.png', '.gif'];
         
         if(!file){
@@ -27,20 +42,19 @@ const createValidations = [
             }
         }
         return true;
-    })
+    }) 
 ]
 
 
-const editeValidations = [
+const editValidations = [
     check('productName').notEmpty().withMessage("Debes completar el campo Nombre").bail()
     .isLength({min: 5, max: undefined}).withMessage("El nombre debe tener al menos 5 caracteres"),
     check('productDescription').notEmpty().withMessage("Debes completar el campo Descripcion").bail()
     .isLength({min: 20, max: undefined}).withMessage("La descripcion debe tener al menos 20 caracteres"),
-    check('productImage').notEmpty().withMessage("Debes completar el campo Descripcion"),
     check('productImage').custom((value, {req}) => {
 
         let file = req.file;
-
+        
         let acceptedExtentions = ['.jpg', '.jpeg', '.png', '.gif'];
         
         if(!file){
@@ -63,7 +77,7 @@ router.get('/',productController.list);
 router.get('/create/',authMiddleware, productController.createProduct);
 
 //Acción de creación
-router.post('/',authMiddleware, createValidations, productController.saveNewProduct);
+router.post('/',authMiddleware, fileUpload.single('productImage'), createValidations, productController.saveNewProduct);
 
 //Detalle de un producto particular
 router.get('/:id',productController.productDetail);
@@ -72,7 +86,7 @@ router.get('/:id',productController.productDetail);
 router.get('/:id/edit',authMiddleware, productController.edit);
 
 //Acción de edición (a donde se envía el formulario)
-router.put('/:id',authMiddleware, editeValidations, productController.saveEdition);
+router.put('/:id',authMiddleware, fileUpload.single('productImage'), editValidations, productController.saveEdition);
 
 //Acción de borrado
 router.delete('/:id',authMiddleware, productController.delete);

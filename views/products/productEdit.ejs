@@ -9,10 +9,16 @@
                 <h2 class="h2-create-product">Estás editando: <i> <%=product.productName%> </i></h2>
             </div>
             
-            <form  action="/product/<%=product.id%>?_method=PUT" method="POST" class="form-container-create-product">
+            <form  action="/product/<%=product.id%>?_method=PUT" method="POST"  enctype="multipart/form-data" class="form-container-create-product">
                 <div>
                     <div class="form-content">
                         <input class="input-product-name-create" id="productName" type="text" value="<%= product.productName %>" name="productName">
+                        <% if(locals.errors && errors.productName) { %>
+                            <div class="text-danger">
+                            <%=errors.productName.msg%>
+                            </div>
+
+                        <% } %>
                     </div>
 
                     <br></br>
@@ -20,6 +26,12 @@
                     <div>
                         <input class="input-product-image-create" id="productImage" type="file" value="<%=product.productimage%>" name="productImage"
                         onchange="return validarExt()">
+                        <% if(locals.errors && errors.productImage) { %>
+                            <div class="text-danger">
+                            <%=errors.productImage.msg%>
+                            </div>
+
+                        <% } %>
                     </div>
                     
 
@@ -50,7 +62,7 @@
                     <div class="form-content">
                         <Label>Precio</Label>
                         <br></br>
-                        <input class="form-inputs" name="productPrice" value="<%= product.productPrice %>" type="number" placeholder="1.0" step="0.01" min="0" max="10000"  required>
+                        <input class="form-inputs" name="productPrice" value="<%= product.productPrice %>" type="number" placeholder="1.0" step="0.01" min="0" max="10000">
                     </div>
 
                     <br></br>
@@ -58,8 +70,13 @@
                     <div class="form-content">
                         <Label>Descripción </Label>
                         <br></br>
-                        <input class="textarea-product-description-create" value="<%= product.productDescription %>" id="productDescription" name="productDescription" placeholder="Agregue una descripción" required>
-                        
+                        <input class="textarea-product-description-create" value="<%= product.productDescription %>" id="productDescription" name="productDescription" placeholder="Agregue una descripción">
+                        <% if(locals.errors && errors.productDescription) { %>
+                            <div class="text-danger">
+                            <%=errors.productDescription.msg%>
+                            </div>
+
+                        <% } %>
                     </div>
                     <div class="errors">
                         <ul>

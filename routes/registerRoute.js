@@ -28,21 +28,23 @@ const validations = [
     check('userName').notEmpty().withMessage("Debes completar el campo Nombre de Usuario"),
     check('userEmail').notEmpty().withMessage("Debes completar el campo Email").bail()
     .isEmail().withMessage('El email ingresado no es válido'),
-    /*check('userEmail').custom((value, {req}) => {
+    check('userEmail').custom((value, {req}) => {
 
         let resp =  registerController.emailAllowed(req.body.userEmail)
+        console.log('la respuesta final es ' + resp)
 
        if(resp == false){
         throw new Error ("El email ingresado ya se encuentra registrado");
        }else {
            return true;
        }
-    }),*/    
+    }),  
     check('userPassword').notEmpty().withMessage("Debes completar el campo contraseña").bail()
     .isLength({min: 8, max: 12}).withMessage('La contraseña debe tener al menos 8 caracteres'),
     check('profileImage').custom((value, {req}) => {
 
         let file = req.file;
+        
 
         let acceptedExtentions = ['.jpg', '.jpeg', '.png', '.gif'];
         

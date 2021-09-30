@@ -9,7 +9,7 @@
                 <h2 class="h2-create-product">Agregá un nuevo producto</h2>
             </div>
             
-            <form  action="/product" method="POST" class="form-container-create-product">
+            <form  action="/product" method="POST" enctype="multipart/form-data" class="form-container-create-product">
                 <div>
                     <div class="form-content">
                         <input class="input-product-name-create" id="productName" type="text" name="productName" placeholder="Nombre producto">
@@ -67,8 +67,8 @@
                     <div class="form-content">
                         <Label>Descripción </Label>
                         <br></br>
-                        <textarea class="textarea-product-description-create" id="productDescription" name="productDescription" placeholder="Agregue una descripción" required>
-                        </textarea>
+                        <input class="textarea-product-description-create" id="productDescription" name="productDescription" placeholder="Agregue una descripción">
+                    </input>
 
                         <% if(locals.errors && errors.productDescription) { %>
                             <div class="text-danger">
