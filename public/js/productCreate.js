@@ -1,4 +1,4 @@
-let errors = [];
+/*let errors = [];
 let ulErrors = document.querySelector('div.errors ul');
         ulErrors.innerHTML = "";
 
@@ -58,3 +58,4 @@ function validarExt(showErrors = true) {
 
 
 
+*/

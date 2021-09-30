@@ -7,7 +7,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-let db = require('../database/models')
+let db = require('../database/models');
+const {validationResult} = require ('express-validator');
+
 
 
 const controlador = {
@@ -30,18 +32,36 @@ const controlador = {
 			})
 	},
 	saveNewProduct: (req, res) => {
-		db.Products.create({
+        let errors = validationResult(req);
+		if(errors.isEmpty()) {
+			db.Products.create({
 
-			productName: req.body.productName,
-			productImage: req.body.productImage,
-			productDescription: req.body.productDescription,
-			productPrice: req.body.productPrice,
-			id_productCategory: req.body.productCategory
-		})
-		.then(res.redirect('/product'))
-		.catch(function(error) {
-			console.log(error)
-		})
+				productName: req.body.productName,
+				productImage: req.body.productImage,
+				productDescription: req.body.productDescription,
+				productPrice: req.body.productPrice,
+				id_productCategory: req.body.productCategory
+			})
+			.then(res.redirect('/product'))
+			.catch(function(error) {
+				console.log(error)
+			})
+
+		} else {
+			db.ProductCategories.findAll()
+			.then(function(categories) {
+				console.log("CREACIONNNNN")
+				return res.render('products/productCreate', { 
+					categories: categories,
+					errors: errors.errors }) 
+			
+			})
+			.catch(function (error) {
+				console.log(error)
+			})
+			 
+		}
+		
 	},
 	edit: (req, res) => {
 		let productRequest = db.Products.findByPk(req.params.id);

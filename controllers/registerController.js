@@ -44,6 +44,30 @@ const controlador = {
                 console.log(error)
             })
         }
-        
-}}
+    },
+    emailAllowed: (mail) => {
+        db.Users.findOne({
+            where: {userEmail: mail}
+        })
+        .then (email => {
+            let response;
+
+            console.log("Respuesta de sequalize: " + email);
+
+            if(email == null) {
+                response = true;
+            } else {
+                response = false;
+            }
+            
+            return response;
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+    } 
+
+
+
+}
 module.exports = controlador;

@@ -1,4 +1,4 @@
-let errors = [];
+/*let errors = [];
 let ulErrors = document.querySelector('div.errorsRegister ul');     
 ulErrors.innerHTML = "";
 
@@ -77,7 +77,7 @@ validarExt(false);
  //imagen
  function validarExt(showErrors= true){            
     let profileImage = document.querySelector("#profileImage");
-    let extPermitidas = /\.(jpg|png|gif)$/i;      
+    let extPermitidas = /\.(jpg|png|gif|jpeg)$/i;      
     let archivoRuta = profileImage.value;
 
     if (!extPermitidas.exec(archivoRuta)){
@@ -88,4 +88,4 @@ validarExt(false);
         
     return false;
     }
-}
+} */
