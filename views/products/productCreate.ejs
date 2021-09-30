@@ -13,6 +13,12 @@
                 <div>
                     <div class="form-content">
                         <input class="input-product-name-create" id="productName" type="text" name="productName" placeholder="Nombre producto">
+                        <% if(locals.errors && errors.productName) { %>
+                            <div class="text-danger">
+                            <%=errors.productName.msg%>
+                            </div>
+
+                        <% } %>
                     </div>
 
                     <br></br>
@@ -20,6 +26,12 @@
                     <div>
                         <input class="input-product-image-create" id="productImage" type="file" name="productImage"
                         onchange="return validarExt()">
+                        <% if(locals.errors && errors.productImage) { %>
+                            <div class="text-danger">
+                            <%=errors.productImage.msg%>
+                            </div>
+
+                        <% } %>
                     </div>
                     
 
@@ -57,6 +69,14 @@
                         <br></br>
                         <textarea class="textarea-product-description-create" id="productDescription" name="productDescription" placeholder="Agregue una descripción" required>
                         </textarea>
+
+                        <% if(locals.errors && errors.productDescription) { %>
+                            <div class="text-danger">
+                            <%=errors.productDescription.msg%>
+                            </div>
+
+                        <% } %>
+
                     </div>
 
                     <div class="errors">

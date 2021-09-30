@@ -25,8 +25,13 @@ const controlador = {
                 }
               })
             .then( user => {
+                console.log("Esto devuelve sequalize: " + user)
+                console.log(req.body.userPassword)
+                console.log(user.userPassword)
+                console.log(bcryptjs.compareSync(req.body.userPassword, user.userPassword))
+                if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) { // ESTO ESTA DEVOLVIENDO SIEMPRE FALSE :(
 
-                if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) {
+                    console.log("Comparacion de contraseñas");
                     userLogged = user;
                     console.log('logueadoo')
                     
