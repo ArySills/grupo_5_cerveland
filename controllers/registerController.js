@@ -46,7 +46,7 @@ const controlador = {
         }
     },
     
-    emailAllowed: (mail) => {
+    emailAllowed:async (mail) => {
         db.Users.findOne({
             where: {userEmail: mail}
         })
@@ -58,7 +58,7 @@ const controlador = {
             } else {
                 response = false;
             }
-            
+            console.log(response + "respuesta del método")
             return response;
         })
         .catch(function(error) {

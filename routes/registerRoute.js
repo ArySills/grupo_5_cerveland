@@ -30,10 +30,10 @@ const validations = [
     .isEmail().withMessage('El email ingresado no es válido'),
     check('userEmail').custom((value, {req}) => {
 
-        let resp =  registerController.emailAllowed(req.body.userEmail)
-        console.log('la respuesta final es ' + resp)
+        let resp = registerController.emailAllowed(req.body.userEmail)
+        console.log('la respuesta final es ' + resp) //recibimos undefined en vez de true or false.
 
-       if(resp == false){
+       if(!resp){
         throw new Error ("El email ingresado ya se encuentra registrado");
        }else {
            return true;
