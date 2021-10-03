@@ -31,6 +31,7 @@ const validations = [
     check('userEmail').custom((value, {req}) => {
 
         let resp =  registerController.emailAllowed(req.body.userEmail)
+
         console.log('la respuesta final es ' + resp)
 
        if(resp == false){

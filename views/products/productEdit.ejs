@@ -9,7 +9,7 @@
                 <h2 class="h2-create-product">Estás editando: <i> <%=product.productName%> </i></h2>
             </div>
             
-            <form  action="/product/<%=product.id%>?_method=PUT" method="POST"  enctype="multipart/form-data" class="form-container-create-product">
+            <form  action="/product/<%=product.id%>?_method=PUT" method="POST"  enctype="multipart/form-data"  class="form-container-create-product">
                 <div>
                     <div class="form-content">
                         <input class="input-product-name-create" id="productName" type="text" value="<%= product.productName %>" name="productName">
@@ -24,7 +24,7 @@
                     <br></br>
                     
                     <div>
-                        <input class="input-product-image-create" id="productImage" type="file" value="<%=product.productimage%>" name="productImage"
+                        <input class="input-product-image-create" id="productImage" type="file" value="<%=product.productImage%>" name="productImage"
                         onchange="return validarExt()">
                         <% if(locals.errors && errors.productImage) { %>
                             <div class="text-danger">
