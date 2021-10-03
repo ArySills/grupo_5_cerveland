@@ -4,12 +4,14 @@
 
 body{
    font-family: 'Roboto', sans-serif;
+   margin: 0px;
 }
 
 
 header{
     font-size: 14px;
     background-color: #F9BE51;
+    border-radius: 10px;
 }
 
 .logo {
@@ -213,7 +215,7 @@ font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 9px;
+    margin-top: 1px;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -450,7 +452,6 @@ td input{
 }
 
 .detail-title{
-    margin-top: 9px;
     padding-top: 21px;
 
 }
@@ -602,19 +603,31 @@ td input{
 .footer{
     background-color: #F9BE51;
     font-family: 'Roboto', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 2%;
+    margin-top: 2px;
+    border-radius: 10px;
 
 }
 
 .footer-padre{
-  display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sobre-nosotros-container{
+    text-align: center;
+
 }
 .sobrenos-texto{
-    max-width: 40%;
-    margin: auto;
     text-align: center;
+    width: 200px;
+    font-size: 15px;
+}
+.subscribite-container{
+    text-align: center;
+}
+.contacto-container{
+    text-align: center;
+    padding-top: 21px;
 }
 
 
@@ -638,8 +651,8 @@ td input{
 }
 
 .sobrenos-iconos{
-    display: flex;
-    margin:auto;
+    display: inline-block;
+    margin: auto;
     text-align: center;
     align-content: center;
     
@@ -657,6 +670,7 @@ td input{
 }
 .suscribite-titulo{
     margin-bottom: 0px;
+    padding-top: 21px;
 }
 
 

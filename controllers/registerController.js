@@ -45,39 +45,7 @@ const controlador = {
             })
         }
     },
-    /*emailAllowed: (mail) => {
-        db.Users.findOne({
-            where: {userEmail: mail}
-        })
-        .then (objeto => {
-            let response;
-            if(objeto == null) {
-                response = true;
-            } else {
-                response = false;
-            }
-            
-            return response;
-
-
-
-            console.log('respuesta' + objeto.dataValues.userEmail)
-            /*
-            console.log("Respuesta de sequalize: " + email);
-            console.log("Respuesta de sequalize: " + response);
-
-            if(email == null) {
-                response = true;
-            } else {
-                response = false;
-            }
-            
-            return response;
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
-    } */
+    
     emailAllowed: (mail) => {
         db.Users.findOne({
             where: {userEmail: mail}
