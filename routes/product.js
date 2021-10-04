@@ -30,7 +30,7 @@ const createValidations = [
 
         let file = req.file;
         console.log(req.file);
-        let acceptedExtentions = ['.jpg', '.jpeg', '.png', '.gif'];
+        let acceptedExtentions = ['.JPG' ,'.jpg', '.jpeg', '.png', '.gif'];
         
         if(!file){
             throw new Error('Tiene que subir una imagen');

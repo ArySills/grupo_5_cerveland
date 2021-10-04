@@ -620,12 +620,24 @@ td input{
 
 }
 .sobrenos-texto{
+<<<<<<< HEAD
+=======
+    text-align: center;
+    width: 200px;
+    font-size: 15px;
+}
+.subscribite-container{
+>>>>>>> c00a4b3421dafe1ee801c15b5c11c1cb64a4652e
     text-align: center;
     width: 200px;
     font-size: 15px;
 }
 .subscribite-container{
     text-align: center;
+}
+.contacto-container{
+    text-align: center;
+    padding-top: 21px;
 }
 .contacto-container{
     text-align: center;
