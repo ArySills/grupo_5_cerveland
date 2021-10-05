@@ -63,13 +63,14 @@
 
                 
                     <form action="/register" method="POST" enctype="multipart/form-data" class="form-container">
-                        <h2 class="h2Login">Registrate !</h2>
+                        <h2 class="h2Login" style="margin-top: 50px" >Registrate !</h2> 
 
 
                         <div>
-                            <div class="form-content-firstName">
-                                <input class="input-product-name-create" id="firstName" type="text" name="firstName"
-                                    value="" placeholder="Nombre">
+                            <div class="form-content">
+                                <i class="fas fa-user"></i>
+                                <input class="form-inputs" id="firstName" type="text" name="firstName"
+                                    value="" placeholder="First name">
                                 
                                 <% if(locals.errors && errors.firstName) { %>
                                     <div class="text-danger">
@@ -80,8 +81,9 @@
                             </div>
 
                             <div class="form-content">
-                                <input class="input-product-name-create" id="lastName" type="text" name="lastName"
-                                    value="" placeholder="Apellido">
+                                <i class="fas fa-user"></i>
+                                <input class="form-inputs" id="lastName" type="text" name="lastName"
+                                    value="" placeholder="Last name">
 
                                     <% if(locals.errors && errors.lastName) { %>
                                         <div class="text-danger">
@@ -89,10 +91,11 @@
                                         </div>
     
                                     <% } %>
+                            </div>   
 
-                                <div class="form-content">
-                                    <i class="fas fa-user"></i>
-                                    <input class="form-inputs" id="userName" type="text" name="userName"
+                            <div class="form-content">
+                                <i class="fas fa-user"></i>
+                                <input class="form-inputs" id="userName" type="text" name="userName"
                                         placeholder="User name">
                                         
                                     <% if(locals.errors && errors.userName) { %>
@@ -100,10 +103,10 @@
                                             <%=errors.userName.msg%>
                                         </div>
                                     <% } %>
-                                </div>
+                            </div>
 
-                                <div class="form-content">                            
-                                    <input class="input-product-image-create" id="profileImage" type="file"
+                            <div class="form-content">                            
+                                <input class="input-product-image-create" style="margin-bottom: 20px; margin-top: 15px" id="profileImage" type="file"
                                         name="profileImage">
 
                                     <% if(locals.errors && errors.profileImage) { %>
@@ -111,11 +114,11 @@
                                                <%=errors.profileImage.msg%>
                                         </div>
                                     <% } %>
-                                </div>
+                            </div>
 
-                                <div class="form-content">
-                                    <i class="fas fa-envelope"></i>
-                                    <input class="form-inputs" id="userEmail" type="text" name="userEmail"
+                            <div class="form-content">
+                                <i class="fas fa-envelope"></i>
+                                <input class="form-inputs" id="userEmail" type="text" name="userEmail"
                                         placeholder="E-mail">
                                     <% if(locals.errors && errors.userEmail) { %>
                                             <div class="text-danger">
@@ -123,32 +126,32 @@
                                             </div>
                                     <% } %>
                                     
-                                </div>
+                            </div>
 
-                                <div class="form-content">
-                                    <i class="fas fa-lock"></i>
-                                    <input class="form-inputs" id="userPassword" type="password" name="userPassword"
+                            <div class="form-content">
+                                <i class="fas fa-lock"></i>
+                                <input class="form-inputs" id="userPassword" type="password" name="userPassword"
                                         placeholder="Password">
                                     <% if(locals.errors && errors.userPassword) { %>
                                         <div class="text-danger">
                                                 <%=errors.userPassword.msg%>
                                         </div>
                                     <% } %>
-                                </div>
-                                <div class="errorsRegister">
+                            </div>
+                            <div class="errorsRegister">
                                     <ul>
 
                                     </ul>
-                                </div>
+                            </div>
 
 
 
 
-                                <div class="buttons">
-                                    <button class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Sign
+                            <div class="buttons">
+                                <button class="login-button" type="submit"> <i class="fas fa-arrow-right"></i>Sign
                                         Up</button>
-                                </div>
-                            </div>    
+                            </div>
+                        </div>        
                     </form>
                 </div>
 

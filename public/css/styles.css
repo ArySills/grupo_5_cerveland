@@ -239,6 +239,7 @@ font-weight: bold;
     font-size: 15px;
     justify-content: center;
     align-items: center;
+    width: 300px;
 }
 
 
@@ -281,7 +282,7 @@ font-weight: bold;
 .remember-me {
     font-size: 12px;
     text-align: left;
-    margin-left: 43px;
+    margin-left: 88px;
     margin-bottom: 5px;
 }
 
@@ -289,7 +290,8 @@ font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .buttons i{
@@ -337,7 +339,7 @@ font-weight: bold;
 
 .forgot-pass{
 text-align: left;
-margin-left: 50px;
+margin-left: 88px;
 }
 
 .forgot-pass a {
@@ -346,6 +348,34 @@ margin-left: 50px;
     font-size: 12px;
 }
 
+/*ESTILOS DEL PRODUCT LIST*/
+
+.product-list{
+    background-color: #F9BE51;
+    border-radius: 10px;
+}
+
+.list-title{
+    margin: 0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 1.7em;
+
+}
+
+.new-product-box{
+    padding-bottom: 20px;
+}
+.new-product-button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #FFA605;
+    padding: 6px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+}
 
 /*ESTILOS DEL CARRITO DE COMPRAS*/
 
@@ -445,10 +475,18 @@ td input{
 /*ESTILOS DEL PRODUCT DETAIL*/
 
 .product-detail{
-    background-color: #f9be51ab;
+    background-color: #F9BE51;
+    border-radius: 10px;
     font-family: 'Roboto', sans-serif;
-    padding-left: 20px;
     padding-bottom: 20px;
+}
+
+.productt-detail-title{
+    padding-top: 60px;
+    margin-top: 0px;
+    text-align: center;
+    color: #226023;
+    margin-bottom: 30px;
 }
 
 .foto-ampliada{
@@ -456,8 +494,11 @@ td input{
     width: 285px;
     height: 285px;
     margin: auto;
-   
-
+    border-radius: 5px;
+}
+.caja-datos-producto{
+    padding-left: 10px;
+    text-align: center;
 }
 
 .cantidad{
@@ -485,15 +526,12 @@ td input{
 .caja-cantidad {
     
     display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    align-items: stretch;
+    justify-content: center;
 }
 
 .btn {
     display: inline-block;
     font-weight: 400;
-    color: #212529;
     text-align: center;
     vertical-align: middle;
     user-select: none;
@@ -505,8 +543,8 @@ td input{
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     color: #FFFFFF;
-    background-color: #84998a;
-    border-color: #84998a;
+    background-color: #226023;
+    border-color: #226023;
     text-decoration: none;
 }
 .edit-button{
@@ -518,26 +556,9 @@ td input{
     padding: 6px 20px;
     margin: 10px;
     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width:auto;
 }
-.new-product-button{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background-color: white;
-    border-radius: 25px;
-    border: 1px solid #FFA605;
-    padding: 6px 20px;
-    margin: 10px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:auto;
-    text-decoration: none;
-}
+
 
 .form-control{
     max-width: 50px;
@@ -591,12 +612,72 @@ td input{
     margin: 20px 30px;
 }
 
+/*PRODUCT CREATE*/
+
+.formulario-product-create {
+    color: #226023;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #F9BE51;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.h2-create-product{
+    padding-top: 60px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.form-container-create-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-product-name-create{
+  border-radius: 4px;
+  border: 1px solid grey;
+  font-size: small;
+  height: 25px;
+  width: 80%;
+  padding: 5px;
+}
+
+
+.input-product-image-create:hover::before {
+
+  border-color: grey;
+  
+  }
+
+.input-product-category-create{
+  margin: 5px;
+}
+
+.textarea-product-description-create{
+  border-radius: 4px;
+  border: 1px solid grey;
+  font-size: small;
+  width: 80%;
+  height: 20%;
+  padding: 5px;
+}
+
 /*FOOTER*/
+
+.detail-title{
+    padding-top: 21px;
+    margin-top: 0px;
+    text-align: center;
+  }
 
 .footer{
     background-color: #F9BE51;
     font-family: 'Roboto', sans-serif;
-    margin-top: 0.5px;
+    margin-top: 1px;
     border-radius: 10px;
 
 }
@@ -691,6 +772,11 @@ td input{
         margin-right: 200px;
 }
 .form-container-inicioSesion {
-        margin-right: 200px;
+        margin-right: 170px;
 }
+}
+@media (max-width: 474px){
+    .formulario h2 {
+        margin-top: 50px;
+    }
 }

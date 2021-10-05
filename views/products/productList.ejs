@@ -4,7 +4,8 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Listado de productos</h1>
+        <div class="product-list">
+        <h1 class="list-title">Listado de productos</h1>
         <ul>
             <% for (let i = 0; i < products.length; i++) { %>
             <li>
@@ -13,10 +14,11 @@
             <% } %> 
         </ul>
 
-        <div>
+            <div class="new-product-box">
             <a href="/product/create">
                 <button class="new-product-button" type="submit">Agregar nuevo producto</button>
             </a>
+            </div>
         </div>
     </main>
 

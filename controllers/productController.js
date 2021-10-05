@@ -121,7 +121,7 @@ const controlador = {
 			.then(function (products) {
 				res.render('products/productList',{products: products})
 			})
-			.catch( function(errror) {
+			.catch( function(error) {
 				console.log(error);
 			})
 	}

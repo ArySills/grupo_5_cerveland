@@ -12,6 +12,8 @@
             <form  action="/product/<%=product.id%>?_method=PUT" method="POST"  enctype="multipart/form-data"  class="form-container-create-product">
                 <div>
                     <div class="form-content">
+                        <label>Nombre</label>
+                        <br></br>
                         <input class="input-product-name-create" id="productName" type="text" value="<%= product.productName %>" name="productName">
                         <% if(locals.errors && errors.productName) { %>
                             <div class="text-danger">
@@ -24,6 +26,8 @@
                     <br></br>
                     
                     <div>
+                        <label>Imagen</label>
+                        <br></br>
                         <input class="input-product-image-create" id="productImage" type="file" value="<%=product.productImage%>" name="productImage"
                         onchange="return validarExt()">
                         <% if(locals.errors && errors.productImage) { %>
