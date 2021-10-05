@@ -4,9 +4,9 @@ const path = require('path');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 const bcryptjs = require ('bcryptjs');
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {validationResult} = require ('express-validator');
 
 let db = require('../database/models')
@@ -47,7 +47,7 @@ const controlador = {
     },
     emailAllowed: async (mail) => {
             return (await db.Users.findOne({ where: {userEmail: mail}})) == null ? true : false;
-    }
+    } 
 
 
 }

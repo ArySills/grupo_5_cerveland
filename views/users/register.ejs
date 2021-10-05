@@ -8,17 +8,6 @@
 
                 <div class="formulario">
 
-                    <% if (typeof errors !=='undefined' ) { %>
-                        <ul>
-                            <% for (let i=0; i < errors.length; i++) { %>
-                                <li>
-                                    <%= errors[i].msg%>
-                                </li>
-                                <% } %>
-                        </ul>
-
-                        <% } %>
-
                             <form action="/login" method="POST" class="form-container-inicioSesion">
                                 <h2 class="h2Login">Inicia sesión !</h2>
 
@@ -62,6 +51,11 @@
                                         <button class="login-button" type="submit"> <i
                                                 class="fas fa-arrow-right"></i>Login</button>
                                     </div>
+                                    <% if (typeof errors !=='undefined' ) { %>
+                                            <% for (let i=0; i < errors.length; i++) { %>
+                                                <p class="text-danger"><%= errors[i].msg%></p>
+                                            <% } %>
+                                    <% } %>
                                 </div>    
                             </form>
                 

@@ -1,4 +1,4 @@
-/*let errors = [];
+let errors = [];
 let ulErrors = document.querySelector('div.errorsRegister ul');     
 ulErrors.innerHTML = "";
 
@@ -88,4 +88,4 @@ validarExt(false);
         
     return false;
     }
-} */
+} 

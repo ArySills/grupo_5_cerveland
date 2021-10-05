@@ -1,4 +1,4 @@
-/*window.addEventListener("load", function () {
+window.addEventListener("load", function () {
 
     let form = document.querySelector("form.form-container-inicioSesion")
 
@@ -30,4 +30,4 @@
             }
         }
     })
-})*/
+})

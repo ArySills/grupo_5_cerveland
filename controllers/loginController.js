@@ -32,6 +32,7 @@ const controlador = {
                 else { userLogged = undefined;}
 
                 if (userLogged == undefined) {
+
                     return res.render('users/register', { errors: [{ msg: 'Credenciales invalidas' }] })
                     
                 } 

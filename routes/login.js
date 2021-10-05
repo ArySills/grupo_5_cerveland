@@ -11,7 +11,7 @@ const validaciones = [
         let resp = await loginController.emailExists(req.body.userEmail)
 
        if(!resp){
-        throw new Error ("El email ingresado no se encuentra registrado");
+        throw new Error ("El email ingresado nose encuentra registrado");
        }else {
            return true;
        }
