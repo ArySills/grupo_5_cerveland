@@ -24,21 +24,26 @@
 
                                 <div>
                                     <div class="form-content">
-                                        <i class="fas fa-user"></i>
-                                        <input class="form-inputs" id="userNameLogin" type="text" name="userName"
-                                            placeholder="User name">
-                                    </div>
-
-                                    <div class="form-content">
                                         <i class="fas fa-envelope"></i>
                                         <input class="form-inputs" id="userEmailLogin" type="email"  name="userEmail"
                                             placeholder="E-mail">
+                                            <% if(locals.errors && errors.userEmail) { %>
+                                                <div class="text-danger">
+                                                <%=errors.userEmail.msg%>
+                                                </div>
+            
+                                            <% } %>
                                     </div>
 
                                     <div class="form-content">
                                         <i class="fas fa-lock"></i>
                                         <input class="form-inputs" id="userPasswordLogin" type="password" name="userPassword"
                                             placeholder="Password">
+                                            <% if(locals.errors && errors.userPassword) { %>
+                                                <div class="text-danger">
+                                                        <%=errors.userPassword.msg%>
+                                                </div>
+                                            <% } %>
                                     </div>
                                     <div class="remember-me">
                                         <input type="checkbox" name="rememberMe" value="rememberMe" id="rememberMe">

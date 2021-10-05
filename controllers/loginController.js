@@ -25,23 +25,11 @@ const controlador = {
                 }
               })
             .then( user => {
-                console.log("Esto devuelve sequalize: " + user)
-                console.log(req.body.userPassword)
-                console.log(user.userPassword)
-                console.log(bcryptjs.compareSync(req.body.userPassword, user.userPassword))
-                if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) { // ESTO ESTA DEVOLVIENDO SIEMPRE FALSE :(
 
-                    console.log("Comparacion de contraseñas");
-                    userLogged = user;
-                    console.log('logueadoo')
-                    
-                    
+                if (bcryptjs.compareSync(req.body.userPassword, user.userPassword)) {
+                    userLogged = user; 
                 }
-
-                else {
-                    userLogged = undefined;
-                   
-                }
+                else { userLogged = undefined;}
 
                 if (userLogged == undefined) {
                     return res.render('users/register', { errors: [{ msg: 'Credenciales invalidas' }] })
@@ -49,16 +37,23 @@ const controlador = {
                 } 
                 else {
                     req.session.usuarioLogueado = userLogged
-                    console.log('Usuario logueado:',  userLogged)
                     return res.redirect(303, '/')
                 }
             })
 
         }
 
-        else { res.render('users/register', { errors: errors.errors }) }
+        else {
+            res.render('users/register', { // Si encuentra errores renderizamos la vista y le pasamos los errores para que se muestren.
+                errors: errors.mapped(),
+                oldData: req.body
+            }); }
 
-    }
+    },
+    emailExists: async (mail) => {
+        return (await db.Users.findOne({ where: {userEmail: mail}})) == null ? false : true;
+}
+
 }
 
 

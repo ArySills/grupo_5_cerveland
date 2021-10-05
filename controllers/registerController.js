@@ -45,27 +45,10 @@ const controlador = {
             })
         }
     },
-    
-    emailAllowed:async (mail) => {
-        db.Users.findOne({
-            where: {userEmail: mail}
-        })
-        .then (email => {
-            let response;
-            
-            if(email == null) {
-                response = true;
-            } else {
-                response = false;
-            }
-            console.log(response + "respuesta del método")
-            return response;
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
-    } 
+    emailAllowed: async (mail) => {
+            return (await db.Users.findOne({ where: {userEmail: mail}})) == null ? true : false;
+    }
 
 
 }
-module.exports = controlador;
+module.exports = controlador; 

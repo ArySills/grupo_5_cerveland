@@ -32,8 +32,6 @@ const validations = [
 
         let resp = await registerController.emailAllowed(req.body.userEmail)
 
-        console.log('la respuesta final es ' + resp)
-
        if(!resp){
         throw new Error ("El email ingresado ya se encuentra registrado");
        }else {
