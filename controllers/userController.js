@@ -12,35 +12,57 @@ const controller = {
 
     list: (req, res) => {
         db.Users.findAll()
-        .then(function (users) {
-            res.render('users/usersList',{users: users})
-        })
-        .catch( function(errror) {
-            console.log(error);
-        })
+            .then(function (users) {
+                return res.status(200).json({
+                    count: users.length,
+                    users: users.map(user => {
+                        return {
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            userName: user.userName,
+                            userEmail: user.userEmail,
+                            profileImage: user.profileImage,
+                            detail: req.originalUrl + '/' + user.id
+                        }
+
+                    }),
+                    status: 200
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     },
-    detail: (req, res)=>{
+    detail: (req, res) => {
 
-    db.Users.findByPk(req.params.id)
-    .then( user => {
-        return res.render('users/myProfile', {user: user})
-    }) 
+        db.Users.findByPk(req.params.id)
+            .then(user => {
+                //return res.render('users/myProfile', { user: user })
+                return res.status(200).json({
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    userName: user.userName,
+                    userEmail: user.userEmail,
+                    profileImage: user.profileImage,
+                    status: 200
+                })
+            })
 
     },
-    guardar: (req, res) => { 
+    guardar: (req, res) => {
 
-        const lastUser = users[users.length -1]; //Buscamos el último producto
+        const lastUser = users[users.length - 1]; //Buscamos el último producto
         const userToCreate = req.body; //Guardamos el producto con todos sus atributos q se cargaron en el form, en una variable
-        
+
         userToCreate.id = lastUser.id + 1; // Agregamos un id consecutivo ascendente al nuevo producto
 
         users.push(userToCreate); //Agregamos el nuevoproducto al array de productos
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(users, null, 2)); 
+        fs.writeFileSync(productsFilePath, JSON.stringify(users, null, 2));
 
-        res.redirect(303,'/')
+        res.redirect(303, '/')
     },
-    save: (req, res) => {  
+    save: (req, res) => {
         db.Users.update({
 
             firstName: req.body.firstName,
@@ -52,11 +74,11 @@ const controller = {
                 id: req.params.id
             }
         })
-        .then(res.redirect('/user'))
-        .catch(function(error) {
-            console.log(error)
-        })
-            
+            .then(res.redirect('/user'))
+            .catch(function (error) {
+                console.log(error)
+            })
+
 
     },
 };
