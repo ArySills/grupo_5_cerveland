@@ -12,6 +12,11 @@ const userRoute = require ('./routes/users');
 const session = require ('express-session');
 const userLogin = require ('./routes/login');
 
+//api
+
+const productApiRouter = require ('./routes/api/product') ;
+const usersApiRouter = require ('./routes/api/users'); 
+
 app.use(methodOverride('_method'));
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
@@ -33,5 +38,12 @@ app.use('/register', rutaRegister);
 app.use('/user', userRoute);
 
 app.use('/login', userLogin);
+
+//Rutas API
+
+app.use('/api/product', productApiRouter);
+app.use('/api/users', usersApiRouter);
+
+
 
 module.exports = app;
