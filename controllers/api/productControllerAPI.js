@@ -1,16 +1,8 @@
-const fs = require('fs');
-const path = require('path');
 const Sequelize = require('sequelize');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 let db = require('../../database/models');
+
 const { validationResult } = require('express-validator');
-
-
 
 const controlador = {
 	productDetail: (req, res) => {
@@ -19,7 +11,14 @@ const controlador = {
 			include: [{ association: "productscategories" }]
 		})
 			.then(product => {
-				res.render('products/productDetail', { product: product })
+				return res.status(200).json({
+                    productName: product.productName,
+                    productPrice: product.productPrice,
+                    id_productCategory: product.id_productCategory,
+                    productDescription: product.productDescription,
+                    productImage: product.productImage,
+                    status: 200
+                })
 			})
 	},
 	createProduct: (req, res) => {
@@ -120,7 +119,7 @@ const controlador = {
 	list: (req, res) => {
 		db.Products.findAll()
 			.then(function (products) {
-				//res.render('products/productList',{products: products})
+
 				return res.status(200).json({
 					count: products.length,
 					countByCategory: db.Products.findAll({

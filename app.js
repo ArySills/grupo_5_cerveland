@@ -14,8 +14,8 @@ const userLogin = require ('./routes/login');
 
 //api
 
-const productApiRouter = require ('./routes/api/product') ;
-const usersApiRouter = require ('./routes/api/users'); 
+const productApiRouter = require ('./routes/api/productAPI') ;
+const usersApiRouter = require ('./routes/api/usersAPI'); 
 
 app.use(methodOverride('_method'));
 app.use(express.static(publicPath));
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use (session({secret: "frase secreta"}));
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
-app.listen (3002, console.log("servidor levantado"));
+app.listen (3005, console.log("servidor levantado"));
 
 
 app.use('/', rutaIndex);
@@ -41,7 +41,7 @@ app.use('/login', userLogin);
 
 //Rutas API
 
-app.use('/api/product', productApiRouter);
+app.use('/api/products', productApiRouter);
 app.use('/api/users', usersApiRouter);
 
 

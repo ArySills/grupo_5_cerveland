@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/products.json');
+//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -121,30 +121,13 @@ const controlador = {
 	list: (req, res) => {
 		db.Products.findAll()
 			.then(function (products) {
-				//res.render('products/productList',{products: products})
-				return res.status(200).json({
-					count: products.length,
-					countByCategory: db.Products.findAll({
-						attributes: ['id_productCategory',
-							Sequelize.fn('count', Sequelize.col('id'))],
-						group: ['id_productCategory']
-					})
-						.then(categories => {
-							console.log(categories)
-							return categories
-						})
-						.catch(function (error) {
-							console.log(error);
-						}),
-					products: products,
-					status: 200
-				})
-
+				res.render('products/productList',{products: products})
 			})
-			.catch(function (error) {
+			.catch( function(error) {
 				console.log(error);
 			})
 	}
+
 };
 
 module.exports = controlador;

@@ -1,6 +1,6 @@
 const express = require ("express");
 const router = express.Router();
-const userController = require ('../../controllers/api/userController');
+const userController = require ('../../controllers/api/userControllerAPI');
 const multer = require ('multer');
 const path = require ('path');
 
@@ -22,7 +22,7 @@ router.get('/', userController.list);
 router.get('/:id',userController.detail);
 
 //Acción de edición (a donde se envía el formulario)
-router.put('/:id',fileUpload.single('profileImage'), userController.save);
+//router.put('/:id',fileUpload.single('profileImage'), userController.save);
 
 
 

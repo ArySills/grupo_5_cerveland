@@ -3,52 +3,32 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+//const usersFilePath = path.join(__dirname, '../data/users.json');
+//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 
     list: (req, res) => {
-        db.Users.findAll()
-            .then(function (users) {
-                return res.status(200).json({
-                    count: users.length,
-                    users: users.map(user => {
-                        return {
-                            firstName: user.firstName,
-                            lastName: user.lastName,
-                            userName: user.userName,
-                            userEmail: user.userEmail,
-                            profileImage: user.profileImage,
-                            detail: req.originalUrl + '/' + user.id
-                        }
 
-                    }),
-                    status: 200
-                })
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    },
+        db.Users.findAll()
+        .then(function (users) {
+            res.render('users/usersList',{users: users})
+        })
+        .catch( function(errror) {
+            console.log(error);
+        })
+        },
+    
     detail: (req, res) => {
 
         db.Users.findByPk(req.params.id)
-            .then(user => {
-                //return res.render('users/myProfile', { user: user })
-                return res.status(200).json({
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    userName: user.userName,
-                    userEmail: user.userEmail,
-                    profileImage: user.profileImage,
-                    status: 200
-                })
-            })
+        .then( user => {
+            return res.render('users/myProfile', {user: user})
+        }) 
 
-    },
+        },
     guardar: (req, res) => {
 
         const lastUser = users[users.length - 1]; //Buscamos el último producto
