@@ -11,7 +11,6 @@ body{
 header{
     font-size: 14px;
     background-color: #F9BE51;
-    border-radius: 10px;
     margin-bottom: 1px;
 }
 
@@ -30,7 +29,7 @@ header{
     display: flex;
     justify-content: space-between;
     height: auto;
-   
+   font-size: 20px;
 }
 
 .main-nav-bar  ul {
@@ -54,14 +53,16 @@ header{
 .icons-nav-bar{
     display: flex;
     justify-content: flex-end;
+    color: #226023;
+    font-size: 20px;
 }
 
 .button-nav-bar{
     padding: 4px;
     border: none;
     background-color: transparent;
-    color: white;
-    font-size: 16px;
+    color: #226023;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -69,18 +70,14 @@ header{
 /* ESTILOS DE SLIDER */
 
 .container-slider{
-    margin-top: 40px;
     position: relative;
     width: 300px;
     height: auto;
     background-size: cover;
     }
-.slider {
-    margin-top: 10px;    
-    overflow: hidden;
+.slider {  
     width: 100%;
-    height: auto;
-    padding: 5px 5px;        
+    height: auto;        
   }
 .slider ul{
     display: flex;
@@ -174,6 +171,7 @@ font-weight: bold;
 }
 .main-title{
     text-align: center;
+    color: #226023;
 }
 /* ESTILOS DE EXTRAS */
 .container-extras{
