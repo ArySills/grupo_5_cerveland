@@ -116,32 +116,21 @@ const controlador = {
 		})
 			.then(res.redirect('/product'))
 	},
-	list: (req, res) => {
-		db.Products.findAll()
-			.then(function (products) {
-
-				return res.status(200).json({
-					count: products.length,
-					countByCategory: db.Products.findAll({
-						attributes: ['id_productCategory',
-							Sequelize.fn('count', Sequelize.col('id'))],
-						group: ['id_productCategory']
-					})
-						.then(categories => {
-							console.log(categories)
-							return categories
-						})
-						.catch(function (error) {
-							console.log(error);
-						}),
-					products: products,
-					status: 200
-				})
-
-			})
-			.catch(function (error) {
-				console.log(error);
-			})
+	list: async (req, res) => {
+			const products = await db.Products.findAll()
+			const categories = await db.Products.findAll({
+							 attributes: ['id_productCategory',
+								 Sequelize.fn('count', Sequelize.col('id'))],
+							 group: ['id_productCategory']
+						 })
+			const totalcateg = await db.ProductCategories.findAll()
+					 return res.status(200).json({
+						 count: products.length,
+						 countByCategory:categories  ,
+						 totalCategories: totalcateg.length,
+						 products: products,
+						 status: 200
+					 })
 	}
 };
 
