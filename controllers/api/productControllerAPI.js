@@ -120,7 +120,7 @@ const controlador = {
 			const products = await db.Products.findAll()
 			const categories = await db.Products.findAll({
 							 attributes: ['id_productCategory',
-								 Sequelize.fn('count', Sequelize.col('id'))],
+								 [Sequelize.fn('count', Sequelize.col('id')), 'count']],
 							 group: ['id_productCategory']
 						 })
 			const totalcateg = await db.ProductCategories.findAll()
