@@ -257,7 +257,6 @@ font-weight: bold;
     border: none;
     border-bottom: #ffffff 2px solid;
     border-radius: 2px;
-    background-color: #F9BE51;
     width: 70%;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -474,7 +473,9 @@ td input{
     padding-bottom: 29px;
 }
 
-
+.product__icon{
+      color: #359223;
+}
 
 
 /*ESTILOS DEL PRODUCT DETAIL*/
@@ -680,7 +681,6 @@ td input{
   }
 
 .footer{
-    background-color: #F9BE51;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
 
