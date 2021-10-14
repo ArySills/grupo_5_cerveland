@@ -1,3 +1,4 @@
+//http://localhost:3005/api/users
 
 const db = require('../../database/models');
 
@@ -71,8 +72,52 @@ const controller = {
             .catch(function (error) {
                 console.log(error)
             })
+    }, /*
+    addSubscribtion: async (req, res) => {
 
+    //let errors = validationResult(req);
 
-    },
+    const userSubscribed = await db.Subscriptions.create({
+        email: req.body.userEmail,
+        isSubscribed: true
+    })
+    return res.status(200).json({
+        emailSubscribed: userSubscribed,
+        status: 200
+    })
+
+    /*    if(errors.isEmpty()){
+        const userSubscribed = await db.Subscriptions.create({
+            email: req.body.userEmail,
+            isSubscribed: true
+        })
+        return res.status(200).json({
+            emailSubscribed: userSubscribed,
+            status: 200
+        })
+    }
+    else {
+        return res.render('products/productCreate', {
+            emailSubscribed: userSubscribed,
+            errors: errors.mapped(),
+            oldData: req.body
+        }) 
+    }*/
+    /*},*/
+    getSubscriptions:  (req, res) => {
+         db.Subscriptions.findAll()
+         .then(users => {
+             return res.status(200).json({
+            emailsSubscribed: users.map( user => {
+            return {
+                email: user.email,
+                subscribed:  user.isSubscribed
+            }
+            }),
+            status: 200
+        })}
+        )
+
+    }
 };
 module.exports = controller;

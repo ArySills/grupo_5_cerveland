@@ -34,7 +34,7 @@ const controlador = {
 	},
 	saveNewProduct: (req, res) => {
 		let errors = validationResult(req);
-
+		console.log(req.file);
 		if (errors.isEmpty()) {
 			db.Products.create({
 

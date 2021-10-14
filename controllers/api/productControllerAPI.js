@@ -1,3 +1,5 @@
+
+//http://localhost:3005/api/products
 const Sequelize = require('sequelize');
 
 let db = require('../../database/models');

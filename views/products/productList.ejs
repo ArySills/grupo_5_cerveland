@@ -4,21 +4,31 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="product-list">
-        <h1 class="list-title">Listado de productos</h1>
-        <ul>
-            <% for (let i = 0; i < products.length; i++) { %>
-            <li>
-                <a href="/product/<%=products[i].id%>"><%=products[i].productName%> </a>
-            </li>
-            <% } %> 
-        </ul>
 
-            <div class="new-product-box">
+        <div class="product-list-container">
+
+        <h2 class="main-title">Listado de productos</h2>
+
+        <section class="container-products-list">
+
+            <% for (let i = 0; i < products.length; i++) { %>
+                    <div class="product-list">
+                        <img src="/images/products/<%=products[i].productImage%>" alt="" class="product__img">
+                        <div class="product__description">
+                          <h3 class="product__title"><%=products[i].productName%></h3>
+                          <span class="product__price">$<%=products[i].productPrice%></span>
+                        </div>
+                        <a class="ver-detalle-product-list" href="/product/<%=products[i].id%>"> Ver detalle </a>
+                    </div>
+            <% } %> 
+
+        </section>
+
+        <div class="new-product-box">
             <a href="/product/create">
                 <button class="new-product-button" type="submit">Agregar nuevo producto</button>
             </a>
-            </div>
+        </div>
         </div>
     </main>
 

@@ -21,6 +21,11 @@ router.get('/', userController.list);
 
 router.get('/:id',userController.detail);
 
+//router.post('/subscriptions', userController.addSubscribtion);
+
+router.get('/subscriptions', userController.getSubscriptions);
+
+
 //Acción de edición (a donde se envía el formulario)
 //router.put('/:id',fileUpload.single('profileImage'), userController.save);
 

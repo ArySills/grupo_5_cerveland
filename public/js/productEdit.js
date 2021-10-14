@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
         let productName = document.querySelector("#productName");
         let productImage = document.querySelector("#productImage");
         let productDescription = document.querySelector("#productDescription");
-        let expresion2 = /\.(jpg|jpeg|png|gif)$/i;
+        let expresion2 = /\.(jpg|png|gif|jpeg|JPEG|GIF|PNG|JPG)$/i;
 
 
         //nombre producto
@@ -43,7 +43,7 @@ window.addEventListener("load", function () {
 //imagen
 function validarExt(showErrors = true) {
     let productImage = document.querySelector("#productImage");
-    let extPermitidas = /\.(jpg|png|gif)$/i;
+    let extPermitidas = /\.(jpg|png|gif|jpeg|JPEG|GIF|PNG|JPG)$/i;
     let archivoRuta = productImage.value;
 
     if (!extPermitidas.exec(archivoRuta)) {
@@ -54,4 +54,10 @@ function validarExt(showErrors = true) {
 
         return false;
     }
+
+}
+
+function goBack(productId){
+
+   // /product/<%=product.id%>
 }

@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
 //imagen
 function validarExt(showErrors = true) {
     let productImage = document.querySelector("#productImage");
-    let extPermitidas = /\.(jpg|png|gif)$/i;
+    let extPermitidas = /\.(jpg|png|gif|jpeg|JPEG|GIF|PNG|JPG)$/i;
     let archivoRuta = productImage.value;
 
     if (!extPermitidas.exec(archivoRuta)) {
