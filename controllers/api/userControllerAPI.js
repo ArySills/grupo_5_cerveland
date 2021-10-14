@@ -72,8 +72,8 @@ const controller = {
             .catch(function (error) {
                 console.log(error)
             })
-    }, /*
-    addSubscribtion: async (req, res) => {
+    }, 
+    /*addSubscribtion: async (req, res) => {
 
     //let errors = validationResult(req);
 
@@ -104,7 +104,7 @@ const controller = {
         }) 
     }*/
     /*},*/
-    getSubscriptions:  (req, res) => {
+    /*getSubscriptions:  (req, res) => {
          db.Subscriptions.findAll()
          .then(users => {
              return res.status(200).json({
@@ -118,6 +118,6 @@ const controller = {
         })}
         )
 
-    }
+    }*/
 };
 module.exports = controller;

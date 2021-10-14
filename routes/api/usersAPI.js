@@ -23,7 +23,7 @@ router.get('/:id',userController.detail);
 
 //router.post('/subscriptions', userController.addSubscribtion);
 
-router.get('/subscriptions', userController.getSubscriptions);
+//router.get('/subscriptions', userController.getSubscriptions);
 
 
 //Acción de edición (a donde se envía el formulario)

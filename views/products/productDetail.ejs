@@ -35,14 +35,16 @@
     <p style="padding-top: 20px; padding-right: 10px"><%= product.productDescription %></p>
 
     <div>
-        <a href="/product/<%=product.id%>/edit">
-        <button class="edit-button" type="submit">Editar</button>
-        </a>
+
+        <button class="edit-button"id="button-redirect-to-prodDetail"onclick="redirectToProductDetail(<%=product.id%>)">Editar</button>
+        <button class="edit-button" id="go-back"onclick="goBack()" >Volver</button>
     </div>
 
     <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
     <button class="edit-button" type="submit">Eliminar</button>
     </form>
+
+
 </div>
 
 <hr class="divisoria">
@@ -60,5 +62,7 @@
 
 </main> 
 <%- include('../partials/footer') %>
+
+<script src="/js/productDetail.js "> </script>
 </body>
 </html>

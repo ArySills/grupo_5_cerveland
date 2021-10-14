@@ -59,5 +59,6 @@ function validarExt(showErrors = true) {
 
 function goBack(productId){
 
-   // /product/<%=product.id%>
+  window.location.replace('/product/' + productId)
 }
+
